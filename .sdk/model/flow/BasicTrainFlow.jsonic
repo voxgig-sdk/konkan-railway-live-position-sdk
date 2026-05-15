@@ -1,0 +1,44 @@
+# BasicTrainFlow
+
+main: kit: flow: BasicTrainFlow:
+{
+  entity: "train",
+  kind: "basic",
+  name: "BasicTrainFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "train_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "train_ref01",
+        srcdatavar: "train_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "train01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-train_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTrainFlow"
+}

@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "train": {
+      "TRAIN00": {
+        "current_station": "s64",
+        "delay": "s65",
+        "destination": "s66",
+        "last_updated": "s67",
+        "latitude": 104,
+        "longitude": 105,
+        "source": "s6a",
+        "status": "s6b",
+        "train_name": "s6c",
+        "train_number": "s6d"
+      },
+      "TRAIN01": {
+        "current_station": "sc8",
+        "delay": "sc9",
+        "destination": "sca",
+        "last_updated": "scb",
+        "latitude": 204,
+        "longitude": 205,
+        "source": "sce",
+        "status": "scf",
+        "train_name": "sd0",
+        "train_number": "sd1"
+      },
+      "TRAIN02": {
+        "current_station": "s12c",
+        "delay": "s12d",
+        "destination": "s12e",
+        "last_updated": "s12f",
+        "latitude": 304,
+        "longitude": 305,
+        "source": "s132",
+        "status": "s133",
+        "train_name": "s134",
+        "train_number": "s135"
+      }
+    }
+  },
+  "new": {
+    "train": {
+      "train_ref01": {
+        "current_station": "s190",
+        "delay": "s191",
+        "destination": "s192",
+        "last_updated": "s193",
+        "latitude": 404,
+        "longitude": 405,
+        "source": "s196",
+        "status": "s197",
+        "train_name": "s198",
+        "train_number": "s199"
+      }
+    }
+  }
+}

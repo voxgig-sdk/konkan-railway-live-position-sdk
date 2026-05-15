@@ -1,0 +1,18 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 2
+  metrics: count: method: 2
+
+  entity: train: {
+    path: "/api/trains": {
+      op: list: method: *GET
+    }
+    path: "/api/trains/{trainNumber}": {
+      rename: param: "trainNumber": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}
