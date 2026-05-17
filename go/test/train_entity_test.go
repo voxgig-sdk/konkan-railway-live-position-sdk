@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk"
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+	sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/utility/struct"
 )
 
 func TestTrainEntity(t *testing.T) {

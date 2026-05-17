@@ -11,7 +11,8 @@
         "source": "s6a",
         "status": "s6b",
         "train_name": "s6c",
-        "train_number": "s6d"
+        "train_number": "s6d",
+        "id": "TRAIN00"
       },
       "TRAIN01": {
         "current_station": "sc8",
@@ -23,7 +24,8 @@
         "source": "sce",
         "status": "scf",
         "train_name": "sd0",
-        "train_number": "sd1"
+        "train_number": "sd1",
+        "id": "TRAIN01"
       },
       "TRAIN02": {
         "current_station": "s12c",
@@ -35,7 +37,8 @@
         "source": "s132",
         "status": "s133",
         "train_name": "s134",
-        "train_number": "s135"
+        "train_number": "s135",
+        "id": "TRAIN02"
       }
     }
   },

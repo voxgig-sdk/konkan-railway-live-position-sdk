@@ -1,10 +1,10 @@
 package voxgigkonkanrailwaylivepositionsdk
 
 import (
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/entity"
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/feature"
-	_ "github.com/voxgig-sdk/konkan-railway-live-position-sdk/utility"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/entity"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/feature"
+	_ "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -3,7 +3,7 @@ package utility
 import (
 	"fmt"
 
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 )
 
 func resultBasicUtil(ctx *core.Context) *core.Result {

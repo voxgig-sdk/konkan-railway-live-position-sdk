@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 )
 
 type BaseFeature struct {

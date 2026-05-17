@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+import "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

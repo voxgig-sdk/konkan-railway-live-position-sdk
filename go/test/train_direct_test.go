@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk"
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+	sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 )
 
 func TestTrainDirect(t *testing.T) {

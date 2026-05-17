@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/core"
+	"github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/utility/struct"
 )
 
 type TrainEntity struct {
