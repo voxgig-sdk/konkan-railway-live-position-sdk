@@ -28,16 +28,13 @@ package main
 
 import (
     "fmt"
-    "os"
 
     sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go"
     "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go/core"
 )
 
 func main() {
-    client := sdk.NewKonkanRailwayLivePositionSDK(map[string]any{
-        "apikey": os.Getenv("KONKAN-RAILWAY-LIVE-POSITION_APIKEY"),
-    })
+    client := sdk.NewKonkanRailwayLivePositionSDK(map[string]any{})
 ```
 
 ### 2. List trains
@@ -157,7 +154,6 @@ Create a `.env.local` file at the project root:
 
 ```
 KONKAN-RAILWAY-LIVE-POSITION_TEST_LIVE=TRUE
-KONKAN-RAILWAY-LIVE-POSITION_APIKEY=<your-key>
 ```
 
 Then run:
@@ -179,7 +175,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `"apikey"` | `string` | API key for authentication. |
 | `"base"` | `string` | Base URL of the API server. |
 | `"prefix"` | `string` | URL path prefix prepended to all requests. |
 | `"suffix"` | `string` | URL path suffix appended to all requests. |

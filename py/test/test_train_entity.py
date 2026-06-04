@@ -98,7 +98,6 @@ def _train_basic_setup(extra):
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": idmap,
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE": "FALSE",
         "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN": "FALSE",
-        "KONKANRAILWAYLIVEPOSITION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +108,6 @@ def _train_basic_setup(extra):
     if env.get("KONKANRAILWAYLIVEPOSITION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KONKANRAILWAYLIVEPOSITION_APIKEY"),
             },
             extra or {},
         ])

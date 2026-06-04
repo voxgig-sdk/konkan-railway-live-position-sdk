@@ -114,7 +114,6 @@ function basicSetup(extra?: any) {
     'KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID': idmap,
     'KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE': 'FALSE',
     'KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN': 'FALSE',
-    'KONKAN_RAILWAY_LIVE_POSITION_APIKEY': 'NONE',
   })
 
   idmap = env['KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID']
@@ -124,7 +123,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new KonkanRailwayLivePositionSDK(merge([
       {
-        apikey: env.KONKAN_RAILWAY_LIVE_POSITION_APIKEY,
       },
       extra
     ]))
