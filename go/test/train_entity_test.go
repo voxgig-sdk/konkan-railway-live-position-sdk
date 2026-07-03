@@ -129,6 +129,7 @@ func trainBasicSetup(extra map[string]any) *entityTestSetup {
 		"KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": idmap,
 		"KONKANRAILWAYLIVEPOSITION_TEST_LIVE":      "FALSE",
 		"KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN":   "FALSE",
+		"KONKANRAILWAYLIVEPOSITION_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID"])
@@ -139,6 +140,7 @@ func trainBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
 			},
 			extra,
 		})

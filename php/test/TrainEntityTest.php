@@ -92,6 +92,7 @@ function train_basic_setup($extra)
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => $idmap,
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
         "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN" => "FALSE",
+        "KONKANRAILWAYLIVEPOSITION_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -103,6 +104,7 @@ function train_basic_setup($extra)
     if ($env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -106,12 +106,14 @@ def _train_direct_setup(mockres):
     env = runner.env_override({
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": {},
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE": "FALSE",
+        "KONKANRAILWAYLIVEPOSITION_APIKEY": "NONE",
     })
 
     live = env.get("KONKANRAILWAYLIVEPOSITION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("KONKANRAILWAYLIVEPOSITION_APIKEY"),
         }
         client = KonkanRailwayLivePositionSDK(merged_opts)
         return {

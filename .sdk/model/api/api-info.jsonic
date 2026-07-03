@@ -16,21 +16,7 @@ main: {
       ]
       title: "Konkan Railway Live Position"
       version: "1.0.0"
-      tagline: "Live positions and station data for trains running on India's Konkan Railway network"
-      homepage: "https://konkan-railway-api.vercel.app"
-      docs_url: "https://freepublicapis.com/konkan-railway-live-position"
-      about_md: `The Konkan Railway Live Position API exposes near real-time information about trains operating on the [Konkan Railway](https://konkan-railway-api.vercel.app), the coastal line that connects Maharashtra, Goa and Karnataka in western India. It is a small community-built JSON service hosted on Vercel.
-
-What you get from the API:
-
-- \`GET /api/v4/fetchStations\` returns the list of stations on the route, including name, state, distance from the line origin, a station-size classification and a short description.
-- \`GET /api/v4/fetchTrains\` returns the live status of trains currently moving on the network.
-
-Responses are JSON wrapped in a \`success\` flag and (for stations) a \`count\` field. CORS is enabled on both endpoints, no authentication is required, and no rate limits are documented. Treat the data as best-effort: response times for the stations list can exceed two seconds.`
-      entity_desc: {
-        train: "A train currently running on the Konkan Railway, with its live position information; served from `GET /api/v4/fetchTrains`."
-      }
-      auth: false
     }
   }
 }
+

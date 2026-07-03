@@ -98,6 +98,7 @@ function train_basic_setup(extra)
     ["KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID"] = idmap,
     ["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] = "FALSE",
     ["KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN"] = "FALSE",
+    ["KONKANRAILWAYLIVEPOSITION_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -109,6 +110,7 @@ function train_basic_setup(extra)
   if env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
       },
       extra or {},
     })

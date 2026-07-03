@@ -1,19 +1,8 @@
 # KonkanRailwayLivePosition SDK
 
-Live positions and station data for trains running on India's Konkan Railway network
+Konkan Railway Live Position client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Konkan Railway Live Position
-
-The Konkan Railway Live Position API exposes near real-time information about trains operating on the [Konkan Railway](https://konkan-railway-api.vercel.app), the coastal line that connects Maharashtra, Goa and Karnataka in western India. It is a small community-built JSON service hosted on Vercel.
-
-What you get from the API:
-
-- `GET /api/v4/fetchStations` returns the list of stations on the route, including name, state, distance from the line origin, a station-size classification and a short description.
-- `GET /api/v4/fetchTrains` returns the live status of trains currently moving on the network.
-
-Responses are JSON wrapped in a `success` flag and (for stations) a `count` field. CORS is enabled on both endpoints, no authentication is required, and no rate limits are documented. Treat the data as best-effort: response times for the stations list can exceed two seconds.
 
 ## Try it
 
@@ -47,29 +36,31 @@ gem install konkan-railway-live-position-sdk
 luarocks install konkan-railway-live-position-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { KonkanRailwayLivePositionSDK } from 'konkan-railway-live-position'
 
-const client = new KonkanRailwayLivePositionSDK({})
+const client = new KonkanRailwayLivePositionSDK({
+  apikey: process.env.KONKAN-RAILWAY-LIVE-POSITION_APIKEY,
+})
 
 // List all trains
 const trains = await client.Train().list()
+console.log(trains.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Train** | A train currently running on the Konkan Railway, with its live position information; served from `GET /api/v4/fetchTrains`. | `/api/trains` |
+| **Train** |  | `/api/trains` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -109,17 +100,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK
 
-client = KonkanRailwayLivePositionSDK({})
+client = KonkanRailwayLivePositionSDK({
+    "apikey": os.environ.get("KONKAN-RAILWAY-LIVE-POSITION_APIKEY"),
+})
 
 # List all trains
-trains, err = client.Train(None).list(None, None)
+trains, err = client.Train().list()
+print(trains)
 
 # Load a specific train
-train, err = client.Train(None).load(
-    {"id": "example_id"}, None
-)
+train, err = client.Train().load({"id": "example_id"})
+print(train)
 ```
 
 ### PHP
@@ -128,15 +122,17 @@ train, err = client.Train(None).load(
 <?php
 require_once 'konkanrailwayliveposition_sdk.php';
 
-$client = new KonkanRailwayLivePositionSDK([]);
+$client = new KonkanRailwayLivePositionSDK([
+    "apikey" => getenv("KONKAN-RAILWAY-LIVE-POSITION_APIKEY"),
+]);
 
 // List all trains
-[$trains, $err] = $client->Train(null)->list(null, null);
+[$trains, $err] = $client->Train()->list();
+print_r($trains);
 
 // Load a specific train
-[$train, $err] = $client->Train(null)->load(
-    ["id" => "example_id"], null
-);
+[$train, $err] = $client->Train()->load(["id" => "example_id"]);
+print_r($train);
 ```
 
 ### Golang
@@ -144,10 +140,13 @@ $client = new KonkanRailwayLivePositionSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/konkan-railway-live-position-sdk/go"
 
-client := sdk.NewKonkanRailwayLivePositionSDK(map[string]any{})
+client := sdk.NewKonkanRailwayLivePositionSDK(map[string]any{
+    "apikey": os.Getenv("KONKAN-RAILWAY-LIVE-POSITION_APIKEY"),
+})
 
 // List all trains
 trains, err := client.Train(nil).List(nil, nil)
+fmt.Println(trains)
 ```
 
 ### Ruby
@@ -155,15 +154,17 @@ trains, err := client.Train(nil).List(nil, nil)
 ```ruby
 require_relative "KonkanRailwayLivePosition_sdk"
 
-client = KonkanRailwayLivePositionSDK.new({})
+client = KonkanRailwayLivePositionSDK.new({
+  "apikey" => ENV["KONKAN-RAILWAY-LIVE-POSITION_APIKEY"],
+})
 
 # List all trains
-trains, err = client.Train(nil).list(nil, nil)
+trains, err = client.Train().list
+puts trains
 
 # Load a specific train
-train, err = client.Train(nil).load(
-  { "id" => "example_id" }, nil
-)
+train, err = client.Train().load({ "id" => "example_id" })
+puts train
 ```
 
 ### Lua
@@ -171,15 +172,17 @@ train, err = client.Train(nil).load(
 ```lua
 local sdk = require("konkan-railway-live-position_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("KONKAN-RAILWAY-LIVE-POSITION_APIKEY"),
+})
 
 -- List all trains
-local trains, err = client:Train(nil):list(nil, nil)
+local trains, err = client:Train():list()
+print(trains)
 
 -- Load a specific train
-local train, err = client:Train(nil):load(
-  { id = "example_id" }, nil
-)
+local train, err = client:Train():load({ id = "example_id" })
+print(train)
 ```
 
 ## Unit testing in offline mode
@@ -198,25 +201,21 @@ const result = await client.Train().load({ id: 'test01' })
 ### Python
 
 ```python
-client = KonkanRailwayLivePositionSDK.test(None, None)
-result, err = client.Train(None).load(
-    {"id": "test01"}, None
-)
+client = KonkanRailwayLivePositionSDK.test()
+result, err = client.Train().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = KonkanRailwayLivePositionSDK::test(null, null);
-[$result, $err] = $client->Train(null)->load(
-    ["id" => "test01"], null
-);
+$client = KonkanRailwayLivePositionSDK::test();
+[$result, $err] = $client->Train()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Train(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -225,19 +224,15 @@ result, err := client.Train(nil).Load(
 ### Ruby
 
 ```ruby
-client = KonkanRailwayLivePositionSDK.test(nil, nil)
-result, err = client.Train(nil).load(
-  { "id" => "test01" }, nil
-)
+client = KonkanRailwayLivePositionSDK.test
+result, err = client.Train().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Train(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Train():load({ id = "test01" })
 ```
 
 ## How it works
@@ -341,11 +336,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Konkan Railway Live Position
-
-- Upstream: [https://konkan-railway-api.vercel.app](https://konkan-railway-api.vercel.app)
-- API docs: [https://freepublicapis.com/konkan-railway-live-position](https://freepublicapis.com/konkan-railway-live-position)
 
 ---
 

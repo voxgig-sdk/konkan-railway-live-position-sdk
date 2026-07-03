@@ -175,12 +175,14 @@ func trainDirectSetup(mockres any) *trainDirectSetupResult {
 	env := envOverride(map[string]any{
 		"KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": map[string]any{},
 		"KONKANRAILWAYLIVEPOSITION_TEST_LIVE":    "FALSE",
+		"KONKANRAILWAYLIVEPOSITION_APIKEY":       "NONE",
 	})
 
 	live := env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
 		}
 		client := sdk.NewKonkanRailwayLivePositionSDK(mergedOpts)
 

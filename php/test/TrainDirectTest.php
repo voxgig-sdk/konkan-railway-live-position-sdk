@@ -121,12 +121,14 @@ function train_direct_setup($mockres)
     $env = Runner::env_override([
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => [],
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
+        "KONKANRAILWAYLIVEPOSITION_APIKEY" => "NONE",
     ]);
 
     $live = $env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
         ];
         $client = new KonkanRailwayLivePositionSDK($merged_opts);
         return [
