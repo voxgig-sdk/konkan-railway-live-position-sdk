@@ -10,7 +10,7 @@ The PHP SDK for the KonkanRailwayLivePosition API — an entity-oriented client 
 
 ## Install
 ```bash
-composer require voxgig/konkan-railway-live-position-sdk
+composer require voxgig-sdk/konkan-railway-live-position
 ```
 
 

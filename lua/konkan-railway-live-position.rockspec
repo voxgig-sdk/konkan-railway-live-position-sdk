@@ -8,12 +8,14 @@ source = {
   dir = "konkan-railway-live-position-sdk/lua"
 }
 description = {
-  summary = "KonkanRailwayLivePosition SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Konkan Railway Live Position public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/konkan-railway-live-position-sdk",
+  issues_url = "https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "konkan-railway-live-position" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

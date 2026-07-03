@@ -10,7 +10,7 @@ The Lua SDK for the KonkanRailwayLivePosition API — an entity-oriented client 
 
 ## Install
 ```bash
-luarocks install konkan-railway-live-position-sdk
+luarocks install voxgig-sdk-konkan-railway-live-position
 ```
 
 If the module is not yet published, add the source directory to

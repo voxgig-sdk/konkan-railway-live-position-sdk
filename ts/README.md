@@ -10,7 +10,7 @@ The TypeScript SDK for the KonkanRailwayLivePosition API — a type-safe, entity
 
 ## Install
 ```bash
-npm install konkan-railway-live-position
+npm install @voxgig-sdk/konkan-railway-live-position
 ```
 ## Tutorial: your first API call
 

@@ -10,13 +10,13 @@ The Ruby SDK for the KonkanRailwayLivePosition API — an entity-oriented client
 
 ## Install
 ```bash
-gem install konkan-railway-live-position-sdk
+gem install voxgig-sdk-konkan-railway-live-position
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "konkan-railway-live-position-sdk"
+gem "voxgig-sdk-konkan-railway-live-position"
 ```
 
 Then run:

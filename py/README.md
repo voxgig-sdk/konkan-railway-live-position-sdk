@@ -10,7 +10,7 @@ The Python SDK for the KonkanRailwayLivePosition API — an entity-oriented clie
 
 ## Install
 ```bash
-pip install konkan-railway-live-position-sdk
+pip install voxgig-sdk-konkan-railway-live-position
 ```
 
 Or install from source:

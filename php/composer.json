@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/konkan-railway-live-position",
-  "description": "KonkanRailwayLivePosition SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Konkan Railway Live Position public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "konkan-railway-live-position"],
+  "homepage": "https://github.com/voxgig-sdk/konkan-railway-live-position-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/konkan-railway-live-position-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"
