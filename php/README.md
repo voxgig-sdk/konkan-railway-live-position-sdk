@@ -29,18 +29,16 @@ require_once 'konkanrailwayliveposition_sdk.php';
 $client = new KonkanRailwayLivePositionSDK();
 ```
 
-### 2. List trains
+### 2. List train records
 
 ```php
 try {
-    $result = $client->train()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Train records — iterate directly.
+    $trains = $client->Train()->list();
+    foreach ($trains as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -49,9 +47,10 @@ try {
 
 ```php
 try {
-    $result = $client->train()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Train record (throws on error).
+    $train = $client->Train()->load(["id" => "example_id"]);
+    print_r($train);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -97,13 +96,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = KonkanRailwayLivePositionSDK::test();
+$client = KonkanRailwayLivePositionSDK::test([
+    "entity" => ["train" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->train()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$train = $client->Train()->load(["id" => "test01"]);
+print_r($train);
 ```
 
 ### Use a custom fetch function
@@ -248,7 +251,7 @@ API path: `/api/trains`
 
 ### Train
 
-Create an instance: `const train = client.train`
+Create an instance: `$train = $client->Train();`
 
 #### Operations
 
@@ -274,14 +277,16 @@ Create an instance: `const train = client.train`
 
 #### Example: Load
 
-```ts
-const train = await client.train.load({ id: 'train_id' })
+```php
+// load() returns the bare Train record (throws on error).
+$train = $client->Train()->load(["id" => "train_id"]);
 ```
 
 #### Example: List
 
-```ts
-const trains = await client.train.list()
+```php
+// list() returns an array of Train records (throws on error).
+$trains = $client->Train()->list();
 ```
 
 
@@ -356,7 +361,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$train = $client->train();
+$train = $client->Train();
 $train->load(["id" => "example_id"]);
 
 // $train->dataGet() now returns the loaded train data

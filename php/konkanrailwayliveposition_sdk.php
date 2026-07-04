@@ -233,10 +233,10 @@ class KonkanRailwayLivePositionSDK
 
     private $_train = null;
 
-    // Idiomatic facade: $client->train()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Train() (PHP method
-    // names are case-insensitive).
-    public function train($data = null)
+    // Canonical facade: $client->Train()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->train()
+    // resolves here too.
+    public function Train($data = null)
     {
         require_once __DIR__ . '/entity/train_entity.php';
         if ($data === null) {

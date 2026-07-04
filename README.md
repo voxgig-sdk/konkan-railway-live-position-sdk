@@ -26,9 +26,11 @@ import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-po
 
 const client = new KonkanRailwayLivePositionSDK()
 
-// List all trains
-const trains = await client.train.list()
-console.log(trains.data)
+// List all trains (returns Train[])
+const trains = await client.Train().list()
+for (const train of trains) {
+  console.log(train)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,12 +85,13 @@ from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK
 
 client = KonkanRailwayLivePositionSDK()
 
-# List all trains
-trains = client.train.list()
-print(trains)
+# List all trains (returns a list, raises on error)
+trains = client.Train().list({})
+for train in trains:
+    print(train)
 
-# Load a specific train
-train = client.train.load({"id": "example_id"})
+# Load a specific train (returns the record, raises on error)
+train = client.Train().load({"id": "example_id"})
 print(train)
 ```
 
@@ -100,12 +103,12 @@ require_once 'konkanrailwayliveposition_sdk.php';
 
 $client = new KonkanRailwayLivePositionSDK();
 
-// List all trains (throws on error)
-$trains = $client->train()->list();
+// List all trains (returns an array; throws on error)
+$trains = $client->Train()->list();
 print_r($trains);
 
-// Load a specific train
-$train = $client->train()->load(["id" => "example_id"]);
+// Load a specific train (returns the bare record; throws on error)
+$train = $client->Train()->load(["id" => "example_id"]);
 print_r($train);
 ```
 
@@ -128,12 +131,12 @@ require_relative "KonkanRailwayLivePosition_sdk"
 
 client = KonkanRailwayLivePositionSDK.new
 
-# List all trains
-trains = client.train.list
+# List all trains (returns an Array; raises on error)
+trains = client.Train.list
 puts trains
 
-# Load a specific train
-train = client.train.load({ "id" => "example_id" })
+# Load a specific train (returns the bare record; raises on error)
+train = client.Train.load({ "id" => "example_id" })
 puts train
 ```
 
@@ -145,11 +148,11 @@ local sdk = require("konkan-railway-live-position_sdk")
 local client = sdk.new()
 
 -- List all trains
-local trains, err = client:train():list()
+local trains, err = client:Train():list()
 print(trains)
 
 -- Load a specific train
-local train, err = client:train():load({ id = "example_id" })
+local train, err = client:Train():load({ id = "example_id" })
 print(train)
 ```
 
@@ -162,22 +165,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = KonkanRailwayLivePositionSDK.test()
-const result = await client.train.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const train = await client.Train().load({ id: 'test01' })
+// train is a bare Train populated with mock data
+console.log(train)
 ```
 
 ### Python
 
 ```python
 client = KonkanRailwayLivePositionSDK.test()
-result = client.train.load({"id": "test01"})
+train = client.Train().load({"id": "test01"})
+print(train)
 ```
 
 ### PHP
 
 ```php
-$client = KonkanRailwayLivePositionSDK::test();
-$result = $client->train()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = KonkanRailwayLivePositionSDK::test([
+    "entity" => ["train" => ["test01" => ["id" => "test01"]]],
+]);
+$train = $client->Train()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -192,15 +200,18 @@ result, err := client.Train(nil).Load(
 ### Ruby
 
 ```ruby
-client = KonkanRailwayLivePositionSDK.test
-result = client.train.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = KonkanRailwayLivePositionSDK.test({
+  "entity" => { "train" => { "test01" => { "id" => "test01" } } },
+})
+train = client.Train.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:train():load({ id = "test01" })
+local result, err = client:Train():load({ id = "test01" })
 ```
 
 ## How it works
@@ -248,6 +259,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

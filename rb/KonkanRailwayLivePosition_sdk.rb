@@ -208,13 +208,7 @@ class KonkanRailwayLivePositionSDK
   end
 
 
-  # Idiomatic facade: client.train.list / client.train.load({ "id" => ... })
-  def train
-    require_relative 'entity/train_entity'
-    @train ||= TrainEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.train instead.
+  # Canonical facade: client.Train.list / client.Train.load({ "id" => ... })
   def Train(data = nil)
     require_relative 'entity/train_entity'
     TrainEntity.new(self, data)

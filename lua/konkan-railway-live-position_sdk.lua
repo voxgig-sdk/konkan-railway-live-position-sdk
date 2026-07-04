@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:train():list() / client:train():load({ id = ... })
-function KonkanRailwayLivePositionSDK:train(data)
+-- Idiomatic facade: client:Train():list() / client:Train():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function KonkanRailwayLivePositionSDK:Train(data)
   local EntityMod = require("entity.train_entity")
   if data == nil then
     if self._train == nil then
@@ -253,12 +254,6 @@ function KonkanRailwayLivePositionSDK:train(data)
     end
     return self._train
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:train() instead.
-function KonkanRailwayLivePositionSDK:Train(data)
-  local EntityMod = require("entity.train_entity")
   return EntityMod.new(self, data)
 end
 

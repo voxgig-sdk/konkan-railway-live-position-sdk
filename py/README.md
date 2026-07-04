@@ -31,24 +31,28 @@ from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK
 client = KonkanRailwayLivePositionSDK()
 ```
 
-### 2. List trains
+### 2. List train records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.train.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    trains = client.Train().list({})
+    for train in trains:
+        print(train)
 except Exception as err:
     print(f"list failed: {err}")
 ```
 
 ### 3. Load a train
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.train.load({"id": "example_id"})
-    print(result)
+    train = client.Train().load({"id": "example_id"})
+    print(train)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -96,8 +100,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = KonkanRailwayLivePositionSDK.test()
 
-result = client.train.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+train = client.Train().load({"id": "test01"})
+# train contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -239,7 +244,7 @@ API path: `/api/trains`
 
 ### Train
 
-Create an instance: `const train = client.train`
+Create an instance: `train = client.Train()`
 
 #### Operations
 
@@ -265,14 +270,14 @@ Create an instance: `const train = client.train`
 
 #### Example: Load
 
-```ts
-const train = await client.train.load({ id: 'train_id' })
+```python
+train = client.Train().load({"id": "train_id"})
 ```
 
 #### Example: List
 
-```ts
-const trains = await client.train.list()
+```python
+trains = client.Train().list({})
 ```
 
 
@@ -346,7 +351,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-train = client.train
+train = client.Train()
 train.load({"id": "example_id"})
 
 # train.data_get() now returns the loaded train data

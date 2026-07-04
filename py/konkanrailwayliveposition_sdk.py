@@ -220,25 +220,15 @@ class KonkanRailwayLivePositionSDK:
         }
 
 
-    @property
-    def train(self):
-        """Idiomatic facade: client.train.list() / client.train.load({"id": ...})."""
-        from entity.train_entity import TrainEntity
-        cached = getattr(self, "_train", None)
-        if cached is None:
-            cached = TrainEntity(self, None)
-            self._train = cached
-        return cached
-
-    def Train(self, data=None):
-        # Deprecated: use client.train instead.
+    def Train(self, data=None) -> "TrainEntity":
+        """Entity factory: client.Train().list({}) / client.Train().load({"id": ...})."""
         from entity.train_entity import TrainEntity
         return TrainEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "KonkanRailwayLivePositionSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class KonkanRailwayLivePositionSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.train_entity import TrainEntity

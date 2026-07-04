@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## TrainEntity
 
 ```lua
-local train = client:train(nil)
+local train = client:Train(nil)
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ local train = client:train(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:train():list()
+local results, err = client:Train():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -116,7 +116,7 @@ local results, err = client:train():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:train():load({ id = "train_id" })
+local result, err = client:Train():load({ id = "train_id" })
 ```
 
 ### Common Methods

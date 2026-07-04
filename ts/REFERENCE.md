@@ -109,7 +109,7 @@ Alias for `KonkanRailwayLivePositionSDK.test()`.
 ## TrainEntity
 
 ```ts
-const train = client.train
+const train = client.Train()
 ```
 
 ### Fields
@@ -134,7 +134,7 @@ const train = client.train
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.train.list()
+const results = await client.Train().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -142,7 +142,7 @@ const results = await client.train.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.train.load({ id: 'train_id' })
+const result = await client.Train().load({ id: 'train_id' })
 ```
 
 ### Common Methods

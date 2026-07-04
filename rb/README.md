@@ -28,16 +28,14 @@ require_relative "KonkanRailwayLivePosition_sdk"
 client = KonkanRailwayLivePositionSDK.new
 ```
 
-### 2. List trains
+### 2. List train records
 
 ```ruby
 begin
-  result = client.train.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Train records — iterate directly.
+  trains = client.Train.list
+  trains.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.train.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Train record (raises on error).
+  train = client.Train.load({ "id" => "example_id" })
+  puts train
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = KonkanRailwayLivePositionSDK.test
+client = KonkanRailwayLivePositionSDK.test({
+  "entity" => { "train" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.train.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+train = client.Train.load({ "id" => "test01" })
+puts train
 ```
 
 ### Use a custom fetch function
@@ -243,7 +246,7 @@ API path: `/api/trains`
 
 ### Train
 
-Create an instance: `const train = client.train`
+Create an instance: `train = client.Train`
 
 #### Operations
 
@@ -269,14 +272,16 @@ Create an instance: `const train = client.train`
 
 #### Example: Load
 
-```ts
-const train = await client.train.load({ id: 'train_id' })
+```ruby
+# load returns the bare Train record (raises on error).
+train = client.Train.load({ "id" => "train_id" })
 ```
 
 #### Example: List
 
-```ts
-const trains = await client.train.list()
+```ruby
+# list returns an Array of Train records (raises on error).
+trains = client.Train.list
 ```
 
 
@@ -351,7 +356,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-train = client.train
+train = client.Train
 train.load({ "id" => "example_id" })
 
 # train.data_get now returns the loaded train data

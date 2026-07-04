@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## TrainEntity
 
 ```php
-$train = $client->train();
+$train = $client->Train();
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ $train = $client->train();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->train()->list([]);
+$results = $client->Train()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -118,7 +118,7 @@ $results = $client->train()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->train()->load(["id" => "train_id"]);
+$result = $client->Train()->load(["id" => "train_id"]);
 ```
 
 ### Common Methods

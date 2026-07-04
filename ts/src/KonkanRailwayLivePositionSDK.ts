@@ -204,14 +204,7 @@ class KonkanRailwayLivePositionSDK {
 
 
 
-  _train?: TrainEntity
-
-  // Idiomatic facade: `client.train.list()` / `client.train.load({ id })`.
-  get train(): TrainEntity {
-    return (this._train ??= new TrainEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.train` instead. */
+  // Entity access: `client.Train().list()` / `client.Train().load({ id })`.
   Train(data?: any) {
     const self = this
     return new TrainEntity(self,data)

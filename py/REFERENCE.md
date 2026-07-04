@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## TrainEntity
 
 ```python
-train = client.train
+train = client.Train()
 ```
 
 ### Fields
@@ -105,7 +105,9 @@ train = client.train
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.train.list({})
+results = client.Train().list({})
+for train in results:
+    print(train)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -113,7 +115,7 @@ results = client.train.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.train.load({"id": "train_id"})
+result = client.Train().load({"id": "train_id"})
 ```
 
 ### Common Methods
