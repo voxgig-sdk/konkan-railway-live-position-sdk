@@ -2,6 +2,8 @@
 
 import { TrainEntity } from './entity/TrainEntity'
 
+export type * from './KonkanRailwayLivePositionTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class KonkanRailwayLivePositionSDK {
 
 
 
+  _train?: TrainEntity
+
+  // Idiomatic facade: `client.train.list()` / `client.train.load({ id })`.
+  get train(): TrainEntity {
+    return (this._train ??= new TrainEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.train` instead. */
   Train(data?: any) {
     const self = this
     return new TrainEntity(self,data)

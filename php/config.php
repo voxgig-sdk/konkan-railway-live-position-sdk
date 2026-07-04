@@ -20,9 +20,6 @@ class KonkanRailwayLivePositionConfig
             ],
             "options" => [
                 "base" => "https://konkan-railway-api.vercel.app",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -145,6 +142,7 @@ class KonkanRailwayLivePositionConfig
                         'orig' => 'train_number',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],

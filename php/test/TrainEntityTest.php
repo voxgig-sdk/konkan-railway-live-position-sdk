@@ -50,14 +50,12 @@ class TrainEntityTest extends TestCase
         $train_ref01_ent = $client->Train(null);
         $train_ref01_match = [];
 
-        [$train_ref01_list_result, $err] = $train_ref01_ent->list($train_ref01_match, null);
-        $this->assertNull($err);
+        $train_ref01_list_result = $train_ref01_ent->list($train_ref01_match, null);
         $this->assertIsArray($train_ref01_list_result);
 
         // LOAD
         $train_ref01_match_dt0 = [];
-        [$train_ref01_data_dt0_loaded, $err] = $train_ref01_ent->load($train_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $train_ref01_data_dt0_loaded = $train_ref01_ent->load($train_ref01_match_dt0, null);
         $this->assertNotNull($train_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function train_basic_setup($extra)
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => $idmap,
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
         "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN" => "FALSE",
-        "KONKANRAILWAYLIVEPOSITION_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function train_basic_setup($extra)
     if ($env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
             ],
             $extra ?? [],
         ]);

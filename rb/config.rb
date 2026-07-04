@@ -15,9 +15,6 @@ module KonkanRailwayLivePositionConfig
       },
       "options" => {
         "base" => "https://konkan-railway-api.vercel.app",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -140,6 +137,7 @@ module KonkanRailwayLivePositionConfig
                         "orig" => "train_number",
                         "reqd" => true,
                         "type" => "`$STRING`",
+                        "index$" => 0,
                       },
                     ],
                   },

@@ -55,6 +55,9 @@ class TrainEntity
         return new TrainEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Train|array $args Train data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class TrainEntity
         }
     }
 
+    /**
+     * @return Train|array The current Train data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Train fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class TrainEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Train fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -84,7 +96,16 @@ class TrainEntity
     }
 
     
-    public function load($reqmatch, $ctrl = null): array
+    /**
+     * Load a single Train.
+     *
+     * @param TrainLoadMatch|array|null $reqmatch Match criteria (id/query
+     *   fields) as an assoc-array; a typed TrainLoadMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Train|array The loaded Train as an assoc-array at the
+     *   SDK boundary; throws KonkanRailwayLivePositionError on failure (item-5 convention).
+     */
+    public function load(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -110,7 +131,16 @@ class TrainEntity
 
 
     
-    public function list($reqmatch, $ctrl = null): array
+    /**
+     * List Train items matching the given filter.
+     *
+     * @param TrainListMatch|array|null $reqmatch Match filter (any subset
+     *   of Train fields) as an assoc-array; TrainListMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Train[]|array A list of Train items as assoc-arrays at
+     *   the SDK boundary; throws KonkanRailwayLivePositionError on failure (item-5 convention).
+     */
+    public function list(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -138,7 +168,7 @@ class TrainEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

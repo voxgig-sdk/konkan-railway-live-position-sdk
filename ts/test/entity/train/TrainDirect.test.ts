@@ -117,14 +117,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID': {},
     'KONKANRAILWAYLIVEPOSITION_TEST_LIVE': 'FALSE',
-    'KONKANRAILWAYLIVEPOSITION_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.KONKANRAILWAYLIVEPOSITION_TEST_LIVE
 
   if (live) {
     const client = new KonkanRailwayLivePositionSDK({
-      apikey: env.KONKANRAILWAYLIVEPOSITION_APIKEY,
     })
 
     let idmap: any = env['KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID']

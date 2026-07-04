@@ -14,9 +14,14 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Train,
+  TrainLoadMatch,
+  TrainListMatch,
+} from '../KonkanRailwayLivePositionTypes'
 
 // TODO: needs Entity superclass
-class TrainEntity extends KonkanRailwayLivePositionEntityBase {
+class TrainEntity extends KonkanRailwayLivePositionEntityBase<Train> {
 
   constructor(client: KonkanRailwayLivePositionSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +37,7 @@ class TrainEntity extends KonkanRailwayLivePositionEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: TrainLoadMatch, ctrl?: Control): Promise<Train> {
 
     const utility = this._utility
 
@@ -136,14 +141,16 @@ class TrainEntity extends KonkanRailwayLivePositionEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Train> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: TrainListMatch, ctrl?: Control): Promise<Train[]> {
 
     const utility = this._utility
 
@@ -243,7 +250,9 @@ class TrainEntity extends KonkanRailwayLivePositionEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Train[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

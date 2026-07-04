@@ -245,6 +245,9 @@ func (sdk *KonkanRailwayLivePositionSDK) Direct(fetchargs map[string]any) (map[s
 }
 
 
+// Train returns a Train entity bound to this client.
+// Idiomatic usage: client.Train(nil).List(nil, nil) or
+// client.Train(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *KonkanRailwayLivePositionSDK) Train(data map[string]any) KonkanRailwayLivePositionEntity {
 	return NewTrainEntityFunc(sdk, data)
 }

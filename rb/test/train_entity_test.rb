@@ -43,14 +43,12 @@ class TrainEntityTest < Minitest::Test
     train_ref01_ent = client.Train(nil)
     train_ref01_match = {}
 
-    train_ref01_list_result, err = train_ref01_ent.list(train_ref01_match, nil)
-    assert_nil err
+    train_ref01_list_result = train_ref01_ent.list(train_ref01_match, nil)
     assert train_ref01_list_result.is_a?(Array)
 
     # LOAD
     train_ref01_match_dt0 = {}
-    train_ref01_data_dt0_loaded, err = train_ref01_ent.load(train_ref01_match_dt0, nil)
-    assert_nil err
+    train_ref01_data_dt0_loaded = train_ref01_ent.load(train_ref01_match_dt0, nil)
     assert !train_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def train_basic_setup(extra)
     "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => idmap,
     "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
     "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN" => "FALSE",
-    "KONKANRAILWAYLIVEPOSITION_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def train_basic_setup(extra)
   if env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["KONKANRAILWAYLIVEPOSITION_APIKEY"],
       },
       extra || {},
     ])

@@ -9,9 +9,12 @@ The TypeScript SDK for the KonkanRailwayLivePosition API — a type-safe, entity
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/konkan-railway-live-position
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { KonkanRailwayLivePositionSDK } from 'konkan-railway-live-position'
+import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position'
 
-const client = new KonkanRailwayLivePositionSDK({
-  apikey: process.env.KONKAN-RAILWAY-LIVE-POSITION_APIKEY,
-})
+const client = new KonkanRailwayLivePositionSDK()
 ```
 
 ### 2. List trains
 
 ```ts
-const result = await client.Train().list()
+const result = await client.train.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -42,7 +43,7 @@ if (result.ok) {
 ### 3. Load a train
 
 ```ts
-const result = await client.Train().load({ id: 'example_id' })
+const result = await client.train.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -91,7 +92,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = KonkanRailwayLivePositionSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.train.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -99,7 +100,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new KonkanRailwayLivePositionSDK({ apikey: '...' })
+const client = new KonkanRailwayLivePositionSDK()
 const testClient = client.tester()
 ```
 
@@ -108,7 +109,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.train
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -135,7 +136,6 @@ const logger = {
 }
 
 const client = new KonkanRailwayLivePositionSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -145,8 +145,7 @@ const client = new KonkanRailwayLivePositionSDK({
 Create a `.env.local` file at the project root:
 
 ```
-KONKAN-RAILWAY-LIVE-POSITION_TEST_LIVE=TRUE
-KONKAN-RAILWAY-LIVE-POSITION_APIKEY=<your-key>
+KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -164,7 +163,6 @@ cd ts && npm test
 
 ```ts
 new KonkanRailwayLivePositionSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -175,7 +173,6 @@ new KonkanRailwayLivePositionSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -287,7 +284,7 @@ API path: `/api/trains`
 
 ### Train
 
-Create an instance: `const train = client.Train()`
+Create an instance: `const train = client.train`
 
 #### Operations
 
@@ -314,13 +311,13 @@ Create an instance: `const train = client.Train()`
 #### Example: Load
 
 ```ts
-const train = await client.Train().load({ id: 'train_id' })
+const train = await client.train.load({ id: 'train_id' })
 ```
 
 #### Example: List
 
 ```ts
-const trains = await client.Train().list()
+const trains = await client.train.list()
 ```
 
 
@@ -381,7 +378,7 @@ konkan-railway-live-position/
 Import the SDK from the package root:
 
 ```ts
-import { KonkanRailwayLivePositionSDK } from 'konkan-railway-live-position'
+import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position'
 ```
 
 ### Entity state
@@ -391,11 +388,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const train = client.train
+await train.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// train.data() now returns the loaded train data
+// train.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

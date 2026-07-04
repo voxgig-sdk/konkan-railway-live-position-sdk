@@ -50,14 +50,12 @@ class TestTrainEntity:
         train_ref01_ent = client.Train(None)
         train_ref01_match = {}
 
-        train_ref01_list_result, err = train_ref01_ent.list(train_ref01_match, None)
-        assert err is None
+        train_ref01_list_result = train_ref01_ent.list(train_ref01_match, None)
         assert isinstance(train_ref01_list_result, list)
 
         # LOAD
         train_ref01_match_dt0 = {}
-        train_ref01_data_dt0_loaded, err = train_ref01_ent.load(train_ref01_match_dt0, None)
-        assert err is None
+        train_ref01_data_dt0_loaded = train_ref01_ent.load(train_ref01_match_dt0, None)
         assert train_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _train_basic_setup(extra):
         "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": idmap,
         "KONKANRAILWAYLIVEPOSITION_TEST_LIVE": "FALSE",
         "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN": "FALSE",
-        "KONKANRAILWAYLIVEPOSITION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _train_basic_setup(extra):
     if env.get("KONKANRAILWAYLIVEPOSITION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KONKANRAILWAYLIVEPOSITION_APIKEY"),
             },
             extra or {},
         ])

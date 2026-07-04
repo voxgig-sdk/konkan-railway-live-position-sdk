@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://konkan-railway-api.vercel.app",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },
@@ -140,6 +137,7 @@ def make_config():
                       "orig": "train_number",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                 },

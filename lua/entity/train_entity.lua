@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch TrainLoadMatch
+---@param ctrl? table
+---@return Train
+---@return string? err
 function TrainEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch TrainListMatch
+---@param ctrl? table
+---@return Train[]
+---@return string? err
 function TrainEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
