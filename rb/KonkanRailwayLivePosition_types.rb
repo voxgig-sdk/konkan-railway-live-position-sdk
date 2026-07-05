@@ -62,7 +62,7 @@ TrainLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Train#list (any subset of Train fields).
+# Request payload for Train#list.
 #
 # @!attribute [rw] current_station
 #   @return [String, nil]

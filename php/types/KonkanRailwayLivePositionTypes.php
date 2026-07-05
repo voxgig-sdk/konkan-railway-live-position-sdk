@@ -33,7 +33,7 @@ class TrainLoadMatch
     public string $id;
 }
 
-/** Match filter for Train#list (any subset of Train fields). */
+/** Request payload for Train#list. */
 class TrainListMatch
 {
     public ?string $current_station = null;

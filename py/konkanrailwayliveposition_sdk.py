@@ -221,7 +221,7 @@ class KonkanRailwayLivePositionSDK:
 
 
     def Train(self, data=None) -> "TrainEntity":
-        """Entity factory: client.Train().list({}) / client.Train().load({"id": ...})."""
+        """Entity factory: client.Train().list() / client.Train().load({"id": ...})."""
         from entity.train_entity import TrainEntity
         return TrainEntity(self, data)
 

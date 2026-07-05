@@ -8,7 +8,7 @@ Complete API reference for the KonkanRailwayLivePosition Python SDK.
 ### Constructor
 
 ```python
-from konkan-railway-live-position_sdk import KonkanRailwayLivePositionSDK
+from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK
 
 client = KonkanRailwayLivePositionSDK(options)
 ```
@@ -87,25 +87,25 @@ train = client.Train()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | ``$STRING`` | No |  |
-| `delay` | ``$INTEGER`` | No |  |
-| `destination` | ``$STRING`` | No |  |
-| `last_updated` | ``$STRING`` | No |  |
-| `latitude` | ``$NUMBER`` | No |  |
-| `longitude` | ``$NUMBER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `train_name` | ``$STRING`` | No |  |
-| `train_number` | ``$STRING`` | No |  |
+| `current_station` | `str` | No |  |
+| `delay` | `int` | No |  |
+| `destination` | `str` | No |  |
+| `last_updated` | `str` | No |  |
+| `latitude` | `float` | No |  |
+| `longitude` | `float` | No |  |
+| `source` | `str` | No |  |
+| `status` | `str` | No |  |
+| `train_name` | `str` | No |  |
+| `train_number` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Train().list({})
+results = client.Train().list()
 for train in results:
     print(train)
 ```

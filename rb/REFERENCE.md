@@ -8,7 +8,7 @@ Complete API reference for the KonkanRailwayLivePosition Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'konkan-railway-live-position_sdk'
+require_relative 'KonkanRailwayLivePosition_sdk'
 
 client = KonkanRailwayLivePositionSDK.new(options)
 ```
@@ -93,25 +93,25 @@ train = client.Train
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | ``$STRING`` | No |  |
-| `delay` | ``$INTEGER`` | No |  |
-| `destination` | ``$STRING`` | No |  |
-| `last_updated` | ``$STRING`` | No |  |
-| `latitude` | ``$NUMBER`` | No |  |
-| `longitude` | ``$NUMBER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `train_name` | ``$STRING`` | No |  |
-| `train_number` | ``$STRING`` | No |  |
+| `current_station` | `String` | No |  |
+| `delay` | `Integer` | No |  |
+| `destination` | `String` | No |  |
+| `last_updated` | `String` | No |  |
+| `latitude` | `Float` | No |  |
+| `longitude` | `Float` | No |  |
+| `source` | `String` | No |  |
+| `status` | `String` | No |  |
+| `train_name` | `String` | No |  |
+| `train_number` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Train.list(nil)
+results = client.Train.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`

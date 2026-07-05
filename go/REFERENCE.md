@@ -97,16 +97,16 @@ train := client.Train(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | ``$STRING`` | No |  |
-| `delay` | ``$INTEGER`` | No |  |
-| `destination` | ``$STRING`` | No |  |
-| `last_updated` | ``$STRING`` | No |  |
-| `latitude` | ``$NUMBER`` | No |  |
-| `longitude` | ``$NUMBER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `train_name` | ``$STRING`` | No |  |
-| `train_number` | ``$STRING`` | No |  |
+| `current_station` | `string` | No |  |
+| `delay` | `int` | No |  |
+| `destination` | `string` | No |  |
+| `last_updated` | `string` | No |  |
+| `latitude` | `float64` | No |  |
+| `longitude` | `float64` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `train_name` | `string` | No |  |
+| `train_number` | `string` | No |  |
 
 ### Operations
 

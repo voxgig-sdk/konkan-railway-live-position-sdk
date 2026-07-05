@@ -22,5 +22,16 @@ export interface TrainLoadMatch {
   id: string
 }
 
-export type TrainListMatch = Partial<Train>
+export interface TrainListMatch {
+  current_station?: string
+  delay?: number
+  destination?: string
+  last_updated?: string
+  latitude?: number
+  longitude?: number
+  source?: string
+  status?: string
+  train_name?: string
+  train_number?: string
+}
 

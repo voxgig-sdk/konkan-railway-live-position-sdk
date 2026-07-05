@@ -22,6 +22,16 @@
 ---@field id string
 
 ---@class TrainListMatch
+---@field current_station? string
+---@field delay? number
+---@field destination? string
+---@field last_updated? string
+---@field latitude? number
+---@field longitude? number
+---@field source? string
+---@field status? string
+---@field train_name? string
+---@field train_number? string
 
 local M = {}
 

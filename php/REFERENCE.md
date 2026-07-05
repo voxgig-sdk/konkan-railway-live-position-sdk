@@ -8,7 +8,7 @@ Complete API reference for the KonkanRailwayLivePosition PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/konkan-railway-live-position_sdk.php';
+require_once __DIR__ . '/konkanrailwayliveposition_sdk.php';
 
 $client = new KonkanRailwayLivePositionSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = KonkanRailwayLivePositionSDK::test();
 
 Create a new `TrainEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): KonkanRailwayLivePositionUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,25 +92,25 @@ $train = $client->Train();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | ``$STRING`` | No |  |
-| `delay` | ``$INTEGER`` | No |  |
-| `destination` | ``$STRING`` | No |  |
-| `last_updated` | ``$STRING`` | No |  |
-| `latitude` | ``$NUMBER`` | No |  |
-| `longitude` | ``$NUMBER`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `train_name` | ``$STRING`` | No |  |
-| `train_number` | ``$STRING`` | No |  |
+| `current_station` | `string` | No |  |
+| `delay` | `int` | No |  |
+| `destination` | `string` | No |  |
+| `last_updated` | `string` | No |  |
+| `latitude` | `float` | No |  |
+| `longitude` | `float` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `train_name` | `string` | No |  |
+| `train_number` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Train()->list([]);
+$results = $client->Train()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -123,19 +123,19 @@ $result = $client->Train()->load(["id" => "train_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -144,7 +144,7 @@ Set the entity match criteria.
 Create a new `TrainEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

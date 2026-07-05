@@ -27,8 +27,7 @@ type TrainLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// TrainListMatch mirrors the train fields as an all-optional match
-// filter (Go analog of Partial<Train>).
+// TrainListMatch is the typed request payload for Train.ListTyped.
 type TrainListMatch struct {
 	CurrentStation *string `json:"current_station,omitempty"`
 	Delay *int `json:"delay,omitempty"`
