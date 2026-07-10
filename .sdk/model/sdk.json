@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -310,14 +307,17 @@
           "url": "https://konkan-railway-api.vercel.app/"
         },
         "description": "This API provides real-time data on the positions of trains operating within the Konkan Railway network. Users can access live tracking information to improve travel planning and schedule management.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://konkan-railway-api.vercel.app"
           }
         ],
+        "summary": "This API provides real-time data on the positions of trains operating within the Konkan Railway network.",
         "title": "Konkan Railway Live Position",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://konkan-railway-api.vercel.app"
       },
       "option": {},
       "target": {
@@ -370,6 +370,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -420,6 +423,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

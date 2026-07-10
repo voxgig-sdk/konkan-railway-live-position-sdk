@@ -60,7 +60,7 @@ func main() {
     }
 
     // Load a single train — the value is the loaded record.
-    train, err := client.Train(nil).Load(map[string]any{"id": "example"}, nil)
+    train, err := client.Train(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }

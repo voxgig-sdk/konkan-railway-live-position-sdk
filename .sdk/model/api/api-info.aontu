@@ -15,9 +15,9 @@ main: {
           url: "https://konkan-railway-api.vercel.app"
         }
       ]
+      summary: "This API provides real-time data on the positions of trains operating within the Konkan Railway network."
       title: "Konkan Railway Live Position"
       version: "1.0.0"
+      website: "https://konkan-railway-api.vercel.app"
     }
   }
-}
-
