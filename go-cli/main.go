@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewKonkanRailwayLivePositionSDK(nil)
+	// Configure from the environment: KONKAN_RAILWAY_LIVE_POSITION_APIKEY carries the API key and
+	// KONKAN_RAILWAY_LIVE_POSITION_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("KONKAN_RAILWAY_LIVE_POSITION_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("KONKAN_RAILWAY_LIVE_POSITION_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewKonkanRailwayLivePositionSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
