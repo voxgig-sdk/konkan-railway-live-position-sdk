@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- KonkanRailwayLivePosition SDK exists test
 
 local sdk = require("konkan-railway-live-position_sdk")
 
