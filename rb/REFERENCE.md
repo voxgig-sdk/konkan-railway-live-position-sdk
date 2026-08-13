@@ -93,16 +93,16 @@ train = client.Train
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | `String` | No |  |
+| `currentStation` | `String` | No |  |
 | `delay` | `Integer` | No |  |
 | `destination` | `String` | No |  |
-| `last_updated` | `String` | No |  |
+| `lastUpdated` | `String` | No |  |
 | `latitude` | `Float` | No |  |
 | `longitude` | `Float` | No |  |
 | `source` | `String` | No |  |
 | `status` | `String` | No |  |
-| `train_name` | `String` | No |  |
-| `train_number` | `String` | No |  |
+| `trainName` | `String` | No |  |
+| `trainNumber` | `String` | No |  |
 
 ### Operations
 

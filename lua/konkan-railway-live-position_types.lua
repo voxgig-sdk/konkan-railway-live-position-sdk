@@ -7,31 +7,31 @@
 -- edit by hand.
 
 ---@class Train
----@field current_station? string
+---@field currentStation? string
 ---@field delay? number
 ---@field destination? string
----@field last_updated? string
+---@field lastUpdated? string
 ---@field latitude? number
 ---@field longitude? number
 ---@field source? string
 ---@field status? string
----@field train_name? string
----@field train_number? string
+---@field trainName? string
+---@field trainNumber? string
 
 ---@class TrainLoadMatch
 ---@field id string
 
 ---@class TrainListMatch
----@field current_station? string
+---@field currentStation? string
 ---@field delay? number
 ---@field destination? string
----@field last_updated? string
+---@field lastUpdated? string
 ---@field latitude? number
 ---@field longitude? number
 ---@field source? string
 ---@field status? string
----@field train_name? string
----@field train_number? string
+---@field trainName? string
+---@field trainNumber? string
 
 local M = {}
 

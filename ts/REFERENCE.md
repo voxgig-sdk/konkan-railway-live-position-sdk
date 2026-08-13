@@ -116,16 +116,16 @@ const train = client.Train()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | `string` | No |  |
+| `currentStation` | `string` | No |  |
 | `delay` | `number` | No |  |
 | `destination` | `string` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `latitude` | `number` | No |  |
 | `longitude` | `number` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `train_name` | `string` | No |  |
-| `train_number` | `string` | No |  |
+| `trainName` | `string` | No |  |
+| `trainNumber` | `string` | No |  |
 
 ### Operations
 

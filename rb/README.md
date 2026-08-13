@@ -37,7 +37,7 @@ begin
   # list returns an Array of Train records — iterate directly.
   trains = client.Train.list
   trains.each do |item|
-    puts "#{item["current_station"]}"
+    puts "#{item["currentStation"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Train record (raises on error).
+  # load returns the ENTITY — call data_get for the Train record (raises on error).
   train = client.Train.load({ "id" => "example_id" })
   puts train
 rescue => err
@@ -134,7 +134,8 @@ client = KonkanRailwayLivePositionSDK.test({
   "entity" => { "train" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 train = client.Train.list()
 puts train
 ```
@@ -252,16 +253,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `current_station` |  |
+| `currentStation` |  |
 | `delay` |  |
 | `destination` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `source` |  |
 | `status` |  |
-| `train_name` |  |
-| `train_number` |  |
+| `trainName` |  |
+| `trainNumber` |  |
 
 Operations: List, Load.
 
@@ -287,21 +288,21 @@ Create an instance: `train = client.Train`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `String` |  |
+| `currentStation` | `String` |  |
 | `delay` | `Integer` |  |
 | `destination` | `String` |  |
-| `last_updated` | `String` |  |
+| `lastUpdated` | `String` |  |
 | `latitude` | `Float` |  |
 | `longitude` | `Float` |  |
 | `source` | `String` |  |
 | `status` | `String` |  |
-| `train_name` | `String` |  |
-| `train_number` | `String` |  |
+| `trainName` | `String` |  |
+| `trainNumber` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Train record (raises on error).
+# load returns the ENTITY — call data_get for the Train record (raises on error).
 train = client.Train.load({ "id" => "train_id" })
 ```
 

@@ -6,16 +6,16 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Train {
-  current_station?: string
+  currentStation?: string
   delay?: number
   destination?: string
-  last_updated?: string
+  lastUpdated?: string
   latitude?: number
   longitude?: number
   source?: string
   status?: string
-  train_name?: string
-  train_number?: string
+  trainName?: string
+  trainNumber?: string
 }
 
 export interface TrainLoadMatch {
@@ -23,15 +23,15 @@ export interface TrainLoadMatch {
 }
 
 export interface TrainListMatch {
-  current_station?: string
+  currentStation?: string
   delay?: number
   destination?: string
-  last_updated?: string
+  lastUpdated?: string
   latitude?: number
   longitude?: number
   source?: string
   status?: string
-  train_name?: string
-  train_number?: string
+  trainName?: string
+  trainNumber?: string
 }
 

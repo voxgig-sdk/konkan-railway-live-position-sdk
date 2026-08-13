@@ -52,7 +52,7 @@ except Exception as err:
 
 ### 3. Load a train
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -136,7 +136,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = KonkanRailwayLivePositionSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 train = client.Train().list()
 # train contains the mock response record
 ```
@@ -233,7 +234,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -255,16 +256,16 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `current_station` |  |
+| `currentStation` |  |
 | `delay` |  |
 | `destination` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `source` |  |
 | `status` |  |
-| `train_name` |  |
-| `train_number` |  |
+| `trainName` |  |
+| `trainNumber` |  |
 
 Operations: List, Load.
 
@@ -290,16 +291,16 @@ Create an instance: `train = client.Train()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `str` |  |
+| `currentStation` | `str` |  |
 | `delay` | `int` |  |
 | `destination` | `str` |  |
-| `last_updated` | `str` |  |
+| `lastUpdated` | `str` |  |
 | `latitude` | `float` |  |
 | `longitude` | `float` |  |
 | `source` | `str` |  |
 | `status` | `str` |  |
-| `train_name` | `str` |  |
-| `train_number` | `str` |  |
+| `trainName` | `str` |  |
+| `trainNumber` | `str` |  |
 
 #### Example: Load
 

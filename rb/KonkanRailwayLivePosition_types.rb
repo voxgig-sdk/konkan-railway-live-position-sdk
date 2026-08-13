@@ -10,7 +10,7 @@
 
 # Train entity data model.
 #
-# @!attribute [rw] current_station
+# @!attribute [rw] currentStation
 #   @return [String, nil]
 #
 # @!attribute [rw] delay
@@ -19,7 +19,7 @@
 # @!attribute [rw] destination
 #   @return [String, nil]
 #
-# @!attribute [rw] last_updated
+# @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
 # @!attribute [rw] latitude
@@ -34,22 +34,22 @@
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] train_name
+# @!attribute [rw] trainName
 #   @return [String, nil]
 #
-# @!attribute [rw] train_number
+# @!attribute [rw] trainNumber
 #   @return [String, nil]
 Train = Struct.new(
-  :current_station,
+  :currentStation,
   :delay,
   :destination,
-  :last_updated,
+  :lastUpdated,
   :latitude,
   :longitude,
   :source,
   :status,
-  :train_name,
-  :train_number,
+  :trainName,
+  :trainNumber,
   keyword_init: true
 )
 
@@ -64,7 +64,7 @@ TrainLoadMatch = Struct.new(
 
 # Request payload for Train#list.
 #
-# @!attribute [rw] current_station
+# @!attribute [rw] currentStation
 #   @return [String, nil]
 #
 # @!attribute [rw] delay
@@ -73,7 +73,7 @@ TrainLoadMatch = Struct.new(
 # @!attribute [rw] destination
 #   @return [String, nil]
 #
-# @!attribute [rw] last_updated
+# @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
 # @!attribute [rw] latitude
@@ -88,22 +88,22 @@ TrainLoadMatch = Struct.new(
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] train_name
+# @!attribute [rw] trainName
 #   @return [String, nil]
 #
-# @!attribute [rw] train_number
+# @!attribute [rw] trainNumber
 #   @return [String, nil]
 TrainListMatch = Struct.new(
-  :current_station,
+  :currentStation,
   :delay,
   :destination,
-  :last_updated,
+  :lastUpdated,
   :latitude,
   :longitude,
   :source,
   :status,
-  :train_name,
-  :train_number,
+  :trainName,
+  :trainNumber,
   keyword_init: true
 )
 

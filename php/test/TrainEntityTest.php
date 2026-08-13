@@ -72,7 +72,7 @@ class TrainEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -122,22 +122,22 @@ function train_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID");
+    $entid_env_raw = getenv("KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => $idmap,
-        "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
-        "KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN" => "FALSE",
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID" => $idmap,
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE" => "FALSE",
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID"]);
+        $env["KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE") {
+    if ($env["KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -146,13 +146,13 @@ function train_basic_setup($extra)
         $client = new KonkanRailwayLivePositionSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE";
+    $live = $env["KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

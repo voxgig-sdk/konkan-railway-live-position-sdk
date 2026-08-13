@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = KonkanRailwayLivePositionSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = KonkanRailwayLivePositionSDK.test({
+  entity: {
+    train: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const trains = await client.Train().list()
-// trains is an array of bare Train records populated with mock data
+// trains is an array of Train entities, populated with mock data
+// — call trains[0].data() for the record itself
 console.log(trains)
 ```
 
@@ -110,7 +119,7 @@ import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-po
 
 const client = new KonkanRailwayLivePositionSDK()
 
-// List all trains (returns Train[])
+// List all trains (returns TrainEntity[] — .data() for the record)
 const trains = await client.Train().list()
 for (const train of trains) {
   console.log(train)
@@ -191,7 +200,7 @@ $client = new KonkanRailwayLivePositionSDK();
 $trains = $client->Train()->list();
 print_r($trains);
 
-// Load a specific train (returns the bare record; throws on error)
+// Load a specific train (returns the ENTITY; call data_get() for the record; throws on error)
 $train = $client->Train()->load(["id" => "example_id"]);
 print_r($train);
 ```
@@ -222,7 +231,7 @@ client = KonkanRailwayLivePositionSDK.new
 trains = client.Train.list
 puts trains
 
-# Load a specific train (returns the bare record; raises on error)
+# Load a specific train (returns the ENTITY; call data_get for the record)
 train = client.Train.load({ "id" => "example_id" })
 puts train
 ```
@@ -359,6 +368,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://konkan-railway-api.vercel.app/](https://konkan-railway-api.vercel.app/)
 

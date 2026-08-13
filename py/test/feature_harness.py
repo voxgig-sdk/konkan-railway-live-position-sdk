@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import KonkanRailwayLivePositionControl
-from core.error import KonkanRailwayLivePositionError
-from core.result import KonkanRailwayLivePositionResult
-from core.spec import KonkanRailwayLivePositionSpec
+from konkanrailwayliveposition_sdk.config import make_config
+from konkanrailwayliveposition_sdk.features import _make_feature
+from konkanrailwayliveposition_sdk.core.control import KonkanRailwayLivePositionControl
+from konkanrailwayliveposition_sdk.core.error import KonkanRailwayLivePositionError
+from konkanrailwayliveposition_sdk.core.result import KonkanRailwayLivePositionResult
+from konkanrailwayliveposition_sdk.core.spec import KonkanRailwayLivePositionSpec
 
 
 # True when this SDK was generated with the named feature.

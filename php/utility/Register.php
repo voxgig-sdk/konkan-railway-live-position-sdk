@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ KonkanRailwayLivePositionUtility::setRegistrar(function (KonkanRailwayLivePositi
     $u->prepare_params = [KonkanRailwayLivePositionPrepareParams::class, 'call'];
     $u->prepare_path = [KonkanRailwayLivePositionPreparePath::class, 'call'];
     $u->prepare_query = [KonkanRailwayLivePositionPrepareQuery::class, 'call'];
+    $u->graphql_body = [KonkanRailwayLivePositionGraphql::class, 'body'];
+    $u->graphql_errors = [KonkanRailwayLivePositionGraphql::class, 'errors'];
     $u->result_basic = [KonkanRailwayLivePositionResultBasic::class, 'call'];
     $u->result_body = [KonkanRailwayLivePositionResultBody::class, 'call'];
     $u->result_headers = [KonkanRailwayLivePositionResultHeaders::class, 'call'];

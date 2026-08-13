@@ -92,16 +92,16 @@ $train = $client->Train();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | `string` | No |  |
+| `currentStation` | `string` | No |  |
 | `delay` | `int` | No |  |
 | `destination` | `string` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `latitude` | `float` | No |  |
 | `longitude` | `float` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `train_name` | `string` | No |  |
-| `train_number` | `string` | No |  |
+| `trainName` | `string` | No |  |
+| `trainNumber` | `string` | No |  |
 
 ### Operations
 

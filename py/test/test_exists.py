@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# KonkanRailwayLivePosition SDK exists test
 
 import pytest
 from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK

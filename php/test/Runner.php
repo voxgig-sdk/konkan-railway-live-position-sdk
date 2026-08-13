@@ -43,8 +43,8 @@ class KonkanRailwayLivePositionTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('KONKANRAILWAYLIVEPOSITION_TEST_LIVE');
-        $override = self::getenv('KONKANRAILWAYLIVEPOSITION_TEST_OVERRIDE');
+        $live = self::getenv('KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE');
+        $override = self::getenv('KONKAN_RAILWAY_LIVE_POSITION_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class KonkanRailwayLivePositionTestRunner
             }
         }
 
-        $explain = self::getenv('KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN');
+        $explain = self::getenv('KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN'] = $explain;
+            $m['KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

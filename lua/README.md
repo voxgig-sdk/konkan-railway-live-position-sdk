@@ -43,7 +43,7 @@ local trains, err = client:Train():list()
 if err then error(err) end
 
 for _, item in ipairs(trains) do
-  print(item["current_station"])
+  print(item["currentStation"])
 end
 ```
 
@@ -241,16 +241,16 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `current_station` |  |
+| `currentStation` |  |
 | `delay` |  |
 | `destination` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `source` |  |
 | `status` |  |
-| `train_name` |  |
-| `train_number` |  |
+| `trainName` |  |
+| `trainNumber` |  |
 
 Operations: List, Load.
 
@@ -276,16 +276,16 @@ Create an instance: `local train = client:Train(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `string` |  |
+| `currentStation` | `string` |  |
 | `delay` | `number` |  |
 | `destination` | `string` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `latitude` | `number` |  |
 | `longitude` | `number` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `train_name` | `string` |  |
-| `train_number` | `string` |  |
+| `trainName` | `string` |  |
+| `trainNumber` | `string` |  |
 
 #### Example: Load
 

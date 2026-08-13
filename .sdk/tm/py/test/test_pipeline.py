@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import KonkanRailwayLivePositionSDK
-from core.error import KonkanRailwayLivePositionError
-from core.result import KonkanRailwayLivePositionResult
-from core.response import KonkanRailwayLivePositionResponse
-from core.spec import KonkanRailwayLivePositionSpec
-from feature.base_feature import KonkanRailwayLivePositionBaseFeature
+from projectname_sdk.core.error import KonkanRailwayLivePositionError
+from projectname_sdk.core.result import KonkanRailwayLivePositionResult
+from projectname_sdk.core.response import KonkanRailwayLivePositionResponse
+from projectname_sdk.core.spec import KonkanRailwayLivePositionSpec
+from projectname_sdk.feature.base_feature import KonkanRailwayLivePositionBaseFeature
 
 
 def _client():

@@ -23,8 +23,8 @@ module KonkanRailwayLivePositionTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("KONKANRAILWAYLIVEPOSITION_TEST_LIVE")
-    override = getenv("KONKANRAILWAYLIVEPOSITION_TEST_OVERRIDE")
+    live = getenv("KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE")
+    override = getenv("KONKAN_RAILWAY_LIVE_POSITION_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module KonkanRailwayLivePositionTestRunner
       end
     end
 
-    explain = getenv("KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN")
-    m["KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN")
+    m["KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

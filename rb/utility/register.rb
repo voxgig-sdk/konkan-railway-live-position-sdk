@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ KonkanRailwayLivePositionUtility.registrar = ->(u) {
   u.prepare_params = KonkanRailwayLivePositionUtilities::PrepareParams
   u.prepare_path = KonkanRailwayLivePositionUtilities::PreparePath
   u.prepare_query = KonkanRailwayLivePositionUtilities::PrepareQuery
+  u.graphql_body = KonkanRailwayLivePositionUtilities::GraphqlBody
+  u.graphql_errors = KonkanRailwayLivePositionUtilities::GraphqlErrors
   u.result_basic = KonkanRailwayLivePositionUtilities::ResultBasic
   u.result_body = KonkanRailwayLivePositionUtilities::ResultBody
   u.result_headers = KonkanRailwayLivePositionUtilities::ResultHeaders

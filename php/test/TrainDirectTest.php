@@ -119,11 +119,11 @@ function train_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID" => [],
-        "KONKANRAILWAYLIVEPOSITION_TEST_LIVE" => "FALSE",
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID" => [],
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] === "TRUE";
+    $live = $env["KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

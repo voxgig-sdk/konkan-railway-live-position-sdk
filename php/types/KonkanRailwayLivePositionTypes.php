@@ -15,16 +15,16 @@ declare(strict_types=1);
 /** Train entity data model. */
 class Train
 {
-    public ?string $current_station = null;
+    public ?string $currentStation = null;
     public ?int $delay = null;
     public ?string $destination = null;
-    public ?string $last_updated = null;
+    public ?string $lastUpdated = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
     public ?string $source = null;
     public ?string $status = null;
-    public ?string $train_name = null;
-    public ?string $train_number = null;
+    public ?string $trainName = null;
+    public ?string $trainNumber = null;
 }
 
 /** Request payload for Train#load. */
@@ -36,15 +36,15 @@ class TrainLoadMatch
 /** Request payload for Train#list. */
 class TrainListMatch
 {
-    public ?string $current_station = null;
+    public ?string $currentStation = null;
     public ?int $delay = null;
     public ?string $destination = null;
-    public ?string $last_updated = null;
+    public ?string $lastUpdated = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
     public ?string $source = null;
     public ?string $status = null;
-    public ?string $train_name = null;
-    public ?string $train_number = null;
+    public ?string $trainName = null;
+    public ?string $trainNumber = null;
 }
 

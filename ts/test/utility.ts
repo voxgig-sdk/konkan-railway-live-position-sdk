@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.KONKANRAILWAYLIVEPOSITION_TEST_LIVE ||
-    'TRUE' === process.env.KONKANRAILWAYLIVEPOSITION_TEST_OVERRIDE
+    'TRUE' === process.env.KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE ||
+    'TRUE' === process.env.KONKAN_RAILWAY_LIVE_POSITION_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN = process.env.KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN || m.KONKANRAILWAYLIVEPOSITION_TEST_EXPLAIN
+  m.KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN = process.env.KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN || m.KONKAN_RAILWAY_LIVE_POSITION_TEST_EXPLAIN
 
   return m
 }

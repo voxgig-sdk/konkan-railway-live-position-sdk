@@ -26,7 +26,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "current_station",
+            ["name"] = "currentStation",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
@@ -47,7 +47,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "last_updated",
+            ["name"] = "lastUpdated",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -82,14 +82,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "train_name",
+            ["name"] = "trainName",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 8,
           },
           {
             ["active"] = true,
-            ["name"] = "train_number",
+            ["name"] = "trainNumber",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 9,
@@ -104,6 +104,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/trains",
                 ["parts"] = {
@@ -140,6 +141,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/trains/{trainNumber}",
                 ["parts"] = {

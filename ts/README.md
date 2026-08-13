@@ -35,7 +35,9 @@ const client = new KonkanRailwayLivePositionSDK()
 
 ### 2. List train records
 
-`list()` resolves to an array of Train objects — iterate it directly:
+`list()` resolves to an array of Train ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const trains = await client.Train().list()
@@ -133,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = KonkanRailwayLivePositionSDK.test()
 
 const train = await client.Train().list()
-// train is a bare entity populated with mock response data
+// train is the entity, populated with mock response data
+// — call train.data() for the record itself
 console.log(train)
 ```
 
@@ -299,16 +302,16 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `current_station` |  |
+| `currentStation` |  |
 | `delay` |  |
 | `destination` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `source` |  |
 | `status` |  |
-| `train_name` |  |
-| `train_number` |  |
+| `trainName` |  |
+| `trainNumber` |  |
 
 Operations: list, load.
 
@@ -334,16 +337,16 @@ Create an instance: `const train = client.Train()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `string` |  |
+| `currentStation` | `string` |  |
 | `delay` | `number` |  |
 | `destination` | `string` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `latitude` | `number` |  |
 | `longitude` | `number` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `train_name` | `string` |  |
-| `train_number` | `string` |  |
+| `trainName` | `string` |  |
+| `trainNumber` | `string` |  |
 
 #### Example: Load
 

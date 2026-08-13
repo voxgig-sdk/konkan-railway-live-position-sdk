@@ -38,7 +38,7 @@ try {
     // list() returns an array of Train records — iterate directly.
     $trains = $client->Train()->list();
     foreach ($trains as $item) {
-        echo $item["current_station"] . "\n";
+        echo $item["currentStation"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Train record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Train record (throws on error).
     $train = $client->Train()->load(["id" => "example_id"]);
     print_r($train);
 } catch (\Throwable $err) {
@@ -140,7 +140,8 @@ $client = KonkanRailwayLivePositionSDK::test([
     "entity" => ["train" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $train = $client->Train()->list();
 print_r($train);
 ```
@@ -240,7 +241,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -262,16 +263,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `current_station` |  |
+| `currentStation` |  |
 | `delay` |  |
 | `destination` |  |
-| `last_updated` |  |
+| `lastUpdated` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `source` |  |
 | `status` |  |
-| `train_name` |  |
-| `train_number` |  |
+| `trainName` |  |
+| `trainNumber` |  |
 
 Operations: List, Load.
 
@@ -297,21 +298,21 @@ Create an instance: `$train = $client->Train();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `string` |  |
+| `currentStation` | `string` |  |
 | `delay` | `int` |  |
 | `destination` | `string` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `latitude` | `float` |  |
 | `longitude` | `float` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `train_name` | `string` |  |
-| `train_number` | `string` |  |
+| `trainName` | `string` |  |
+| `trainNumber` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Train record (throws on error).
+// load() returns the ENTITY — call data_get() for the Train record (throws on error).
 $train = $client->Train()->load(["id" => "train_id"]);
 ```
 

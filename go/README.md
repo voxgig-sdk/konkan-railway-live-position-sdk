@@ -269,16 +269,16 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"current_station"` |  |
+| `"currentStation"` |  |
 | `"delay"` |  |
 | `"destination"` |  |
-| `"last_updated"` |  |
+| `"lastUpdated"` |  |
 | `"latitude"` |  |
 | `"longitude"` |  |
 | `"source"` |  |
 | `"status"` |  |
-| `"train_name"` |  |
-| `"train_number"` |  |
+| `"trainName"` |  |
+| `"trainNumber"` |  |
 
 Operations: List, Load.
 
@@ -304,16 +304,16 @@ Create an instance: `train := client.Train(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `current_station` | `string` |  |
+| `currentStation` | `string` |  |
 | `delay` | `int` |  |
 | `destination` | `string` |  |
-| `last_updated` | `string` |  |
+| `lastUpdated` | `string` |  |
 | `latitude` | `float64` |  |
 | `longitude` | `float64` |  |
 | `source` | `string` |  |
 | `status` | `string` |  |
-| `train_name` | `string` |  |
-| `train_number` | `string` |  |
+| `trainName` | `string` |  |
+| `trainNumber` | `string` |  |
 
 #### Example: Load
 

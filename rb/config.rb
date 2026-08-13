@@ -27,7 +27,7 @@ module KonkanRailwayLivePositionConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "current_station",
+              "name" => "currentStation",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 0,
@@ -48,7 +48,7 @@ module KonkanRailwayLivePositionConfig
             },
             {
               "active" => true,
-              "name" => "last_updated",
+              "name" => "lastUpdated",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 3,
@@ -83,14 +83,14 @@ module KonkanRailwayLivePositionConfig
             },
             {
               "active" => true,
-              "name" => "train_name",
+              "name" => "trainName",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 8,
             },
             {
               "active" => true,
-              "name" => "train_number",
+              "name" => "trainNumber",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 9,
@@ -105,6 +105,7 @@ module KonkanRailwayLivePositionConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/trains",
                   "parts" => [
@@ -141,6 +142,7 @@ module KonkanRailwayLivePositionConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/trains/{trainNumber}",
                   "parts" => [

@@ -98,16 +98,16 @@ fmt.Println(train.GetName()) // "train"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `current_station` | `string` | No |  |
+| `currentStation` | `string` | No |  |
 | `delay` | `int` | No |  |
 | `destination` | `string` | No |  |
-| `last_updated` | `string` | No |  |
+| `lastUpdated` | `string` | No |  |
 | `latitude` | `float64` | No |  |
 | `longitude` | `float64` | No |  |
 | `source` | `string` | No |  |
 | `status` | `string` | No |  |
-| `train_name` | `string` | No |  |
-| `train_number` | `string` | No |  |
+| `trainName` | `string` | No |  |
+| `trainNumber` | `string` | No |  |
 
 ### Operations
 

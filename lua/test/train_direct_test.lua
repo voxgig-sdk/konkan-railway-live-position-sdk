@@ -113,11 +113,11 @@ function train_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID"] = {},
-    ["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] = "FALSE",
+    ["KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID"] = {},
+    ["KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["KONKANRAILWAYLIVEPOSITION_TEST_LIVE"] == "TRUE"
+  local live = env["KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

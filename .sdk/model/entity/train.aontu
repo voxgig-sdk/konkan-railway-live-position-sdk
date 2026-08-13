@@ -6,7 +6,7 @@ main: kit: entity: train: {
 
   fields: [
     {
-      name: "current_station"
+      name: "currentStation"
       req: false
       type: "`$STRING`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: train: {
       type: "`$STRING`"
     }
     {
-      name: "last_updated"
+      name: "lastUpdated"
       req: false
       type: "`$STRING`"
     }
@@ -46,12 +46,12 @@ main: kit: entity: train: {
       type: "`$STRING`"
     }
     {
-      name: "train_name"
+      name: "trainName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "train_number"
+      name: "trainNumber"
       req: false
       type: "`$STRING`"
     }

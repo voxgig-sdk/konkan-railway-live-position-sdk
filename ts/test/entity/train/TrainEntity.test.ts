@@ -26,8 +26,8 @@ import {
 describe('TrainEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when KONKANRAILWAYLIVEPOSITION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('KONKANRAILWAYLIVEPOSITION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = KonkanRailwayLivePositionSDK.test()
@@ -63,7 +63,7 @@ describe('TrainEntity', async () => {
     const train_ref01_ent = client.Train()
     const train_ref01_match: any = {}
 
-    const train_ref01_list = await train_ref01_ent.list(train_ref01_match)
+    const train_ref01_list = (await train_ref01_ent.list(train_ref01_match)).map((e: any) => e.data())
 
 
 

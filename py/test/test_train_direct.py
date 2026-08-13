@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from konkanrailwayliveposition_sdk.utility.voxgig_struct import voxgig_struct as vs
 from konkanrailwayliveposition_sdk import KonkanRailwayLivePositionSDK
-from core import helpers
+from konkanrailwayliveposition_sdk.core import helpers
 from test import runner
 
 
@@ -102,11 +102,11 @@ def _train_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "KONKANRAILWAYLIVEPOSITION_TEST_TRAIN_ENTID": {},
-        "KONKANRAILWAYLIVEPOSITION_TEST_LIVE": "FALSE",
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_TRAIN_ENTID": {},
+        "KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("KONKANRAILWAYLIVEPOSITION_TEST_LIVE") == "TRUE"
+    live = env.get("KONKAN_RAILWAY_LIVE_POSITION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
