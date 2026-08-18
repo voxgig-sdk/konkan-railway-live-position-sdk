@@ -15,7 +15,7 @@ require_relative "../KonkanRailwayLivePosition_sdk"
 module KonkanRailwayLivePositionFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = KonkanRailwayLivePositionConfig.make_config["feature"]
+    f = KonkanRailwayLivePositionConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

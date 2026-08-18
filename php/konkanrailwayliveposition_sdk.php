@@ -40,7 +40,7 @@ class KonkanRailwayLivePositionSDK
         $utility = new KonkanRailwayLivePositionUtility();
         $this->_utility = $utility;
 
-        $config = KonkanRailwayLivePositionConfig::make_config();
+        $config = KonkanRailwayLivePositionConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

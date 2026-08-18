@@ -28,7 +28,7 @@ class KonkanRailwayLivePositionSDK
     utility = KonkanRailwayLivePositionUtility.new
     @_utility = utility
 
-    config = KonkanRailwayLivePositionConfig.make_config
+    config = KonkanRailwayLivePositionConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

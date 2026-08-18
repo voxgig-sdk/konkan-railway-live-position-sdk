@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from konkanrailwayliveposition_sdk.config import make_config
+from konkanrailwayliveposition_sdk.config import shared_config
 from konkanrailwayliveposition_sdk.features import _make_feature
 from konkanrailwayliveposition_sdk.core.control import KonkanRailwayLivePositionControl
 from konkanrailwayliveposition_sdk.core.error import KonkanRailwayLivePositionError
@@ -24,7 +24,7 @@ from konkanrailwayliveposition_sdk.core.spec import KonkanRailwayLivePositionSpe
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

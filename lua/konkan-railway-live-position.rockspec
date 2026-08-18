@@ -23,6 +23,7 @@ build = {
   modules = {
     ["konkan-railway-live-position_sdk"] = "konkan-railway-live-position_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }
