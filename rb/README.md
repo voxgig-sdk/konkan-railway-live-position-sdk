@@ -253,16 +253,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `currentStation` |  |
-| `delay` |  |
-| `destination` |  |
-| `lastUpdated` |  |
-| `latitude` |  |
-| `longitude` |  |
-| `source` |  |
-| `status` |  |
-| `trainName` |  |
-| `trainNumber` |  |
+| `currentStation` | Current station where the train is located or last reported position |
+| `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | Destination station of the train |
+| `lastUpdated` | Timestamp of the last position update |
+| `latitude` | Current latitude coordinate of the train |
+| `longitude` | Current longitude coordinate of the train |
+| `source` | Source station of the train |
+| `status` | Current status of the train |
+| `trainName` | Name of the train |
+| `trainNumber` | Unique identifier for the train |
 
 Operations: List, Load.
 
@@ -288,16 +288,16 @@ Create an instance: `train = client.Train`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `currentStation` | `String` |  |
-| `delay` | `Integer` |  |
-| `destination` | `String` |  |
-| `lastUpdated` | `String` |  |
-| `latitude` | `Float` |  |
-| `longitude` | `Float` |  |
-| `source` | `String` |  |
-| `status` | `String` |  |
-| `trainName` | `String` |  |
-| `trainNumber` | `String` |  |
+| `currentStation` | `String` | Current station where the train is located or last reported position |
+| `delay` | `Integer` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `String` | Destination station of the train |
+| `lastUpdated` | `String` | Timestamp of the last position update |
+| `latitude` | `Float` | Current latitude coordinate of the train |
+| `longitude` | `Float` | Current longitude coordinate of the train |
+| `source` | `String` | Source station of the train |
+| `status` | `String` | Current status of the train |
+| `trainName` | `String` | Name of the train |
+| `trainNumber` | `String` | Unique identifier for the train |
 
 #### Example: Load
 

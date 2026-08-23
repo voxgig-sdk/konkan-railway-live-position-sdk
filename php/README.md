@@ -263,16 +263,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `currentStation` |  |
-| `delay` |  |
-| `destination` |  |
-| `lastUpdated` |  |
-| `latitude` |  |
-| `longitude` |  |
-| `source` |  |
-| `status` |  |
-| `trainName` |  |
-| `trainNumber` |  |
+| `currentStation` | Current station where the train is located or last reported position |
+| `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | Destination station of the train |
+| `lastUpdated` | Timestamp of the last position update |
+| `latitude` | Current latitude coordinate of the train |
+| `longitude` | Current longitude coordinate of the train |
+| `source` | Source station of the train |
+| `status` | Current status of the train |
+| `trainName` | Name of the train |
+| `trainNumber` | Unique identifier for the train |
 
 Operations: List, Load.
 
@@ -298,16 +298,16 @@ Create an instance: `$train = $client->Train();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `currentStation` | `string` |  |
-| `delay` | `int` |  |
-| `destination` | `string` |  |
-| `lastUpdated` | `string` |  |
-| `latitude` | `float` |  |
-| `longitude` | `float` |  |
-| `source` | `string` |  |
-| `status` | `string` |  |
-| `trainName` | `string` |  |
-| `trainNumber` | `string` |  |
+| `currentStation` | `string` | Current station where the train is located or last reported position |
+| `delay` | `int` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `string` | Destination station of the train |
+| `lastUpdated` | `string` | Timestamp of the last position update |
+| `latitude` | `float` | Current latitude coordinate of the train |
+| `longitude` | `float` | Current longitude coordinate of the train |
+| `source` | `string` | Source station of the train |
+| `status` | `string` | Current status of the train |
+| `trainName` | `string` | Name of the train |
+| `trainNumber` | `string` | Unique identifier for the train |
 
 #### Example: Load
 

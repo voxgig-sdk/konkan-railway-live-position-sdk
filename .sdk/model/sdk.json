@@ -36,60 +36,70 @@
               "active": true,
               "name": "currentStation",
               "req": false,
+              "short": "Current station where the train is located or last reported position",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "delay",
               "req": false,
+              "short": "Delay in minutes (positive for late, negative for early, 0 for on time)",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "destination",
               "req": false,
+              "short": "Destination station of the train",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "lastUpdated",
               "req": false,
+              "short": "Timestamp of the last position update",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "latitude",
               "req": false,
+              "short": "Current latitude coordinate of the train",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "longitude",
               "req": false,
+              "short": "Current longitude coordinate of the train",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "Source station of the train",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Current status of the train",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "trainName",
               "req": false,
+              "short": "Name of the train",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "trainNumber",
               "req": false,
+              "short": "Unique identifier for the train",
               "type": "`$STRING`"
             }
           ],

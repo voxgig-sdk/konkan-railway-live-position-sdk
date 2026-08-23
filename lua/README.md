@@ -241,16 +241,16 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `currentStation` |  |
-| `delay` |  |
-| `destination` |  |
-| `lastUpdated` |  |
-| `latitude` |  |
-| `longitude` |  |
-| `source` |  |
-| `status` |  |
-| `trainName` |  |
-| `trainNumber` |  |
+| `currentStation` | Current station where the train is located or last reported position |
+| `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | Destination station of the train |
+| `lastUpdated` | Timestamp of the last position update |
+| `latitude` | Current latitude coordinate of the train |
+| `longitude` | Current longitude coordinate of the train |
+| `source` | Source station of the train |
+| `status` | Current status of the train |
+| `trainName` | Name of the train |
+| `trainNumber` | Unique identifier for the train |
 
 Operations: List, Load.
 
@@ -276,16 +276,16 @@ Create an instance: `local train = client:Train(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `currentStation` | `string` |  |
-| `delay` | `number` |  |
-| `destination` | `string` |  |
-| `lastUpdated` | `string` |  |
-| `latitude` | `number` |  |
-| `longitude` | `number` |  |
-| `source` | `string` |  |
-| `status` | `string` |  |
-| `trainName` | `string` |  |
-| `trainNumber` | `string` |  |
+| `currentStation` | `string` | Current station where the train is located or last reported position |
+| `delay` | `number` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `string` | Destination station of the train |
+| `lastUpdated` | `string` | Timestamp of the last position update |
+| `latitude` | `number` | Current latitude coordinate of the train |
+| `longitude` | `number` | Current longitude coordinate of the train |
+| `source` | `string` | Source station of the train |
+| `status` | `string` | Current status of the train |
+| `trainName` | `string` | Name of the train |
+| `trainNumber` | `string` | Unique identifier for the train |
 
 #### Example: Load
 

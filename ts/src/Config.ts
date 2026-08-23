@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'KonkanRailwayLivePosition',
+        slug: "konkan-railway-live-position",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,42 +67,52 @@ class Config {
       "fields": [
         {
           "name": "currentStation",
+          "short": "Current station where the train is located or last reported position",
           "type": "`$STRING`"
         },
         {
           "name": "delay",
+          "short": "Delay in minutes (positive for late, negative for early, 0 for on time)",
           "type": "`$INTEGER`"
         },
         {
           "name": "destination",
+          "short": "Destination station of the train",
           "type": "`$STRING`"
         },
         {
           "name": "lastUpdated",
+          "short": "Timestamp of the last position update",
           "type": "`$STRING`"
         },
         {
           "name": "latitude",
+          "short": "Current latitude coordinate of the train",
           "type": "`$NUMBER`"
         },
         {
           "name": "longitude",
+          "short": "Current longitude coordinate of the train",
           "type": "`$NUMBER`"
         },
         {
           "name": "source",
+          "short": "Source station of the train",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Current status of the train",
           "type": "`$STRING`"
         },
         {
           "name": "trainName",
+          "short": "Name of the train",
           "type": "`$STRING`"
         },
         {
           "name": "trainNumber",
+          "short": "Unique identifier for the train",
           "type": "`$STRING`"
         }
       ],

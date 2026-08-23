@@ -90,16 +90,16 @@ local train = client:Train(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `currentStation` | `string` | No |  |
-| `delay` | `number` | No |  |
-| `destination` | `string` | No |  |
-| `lastUpdated` | `string` | No |  |
-| `latitude` | `number` | No |  |
-| `longitude` | `number` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
-| `trainName` | `string` | No |  |
-| `trainNumber` | `string` | No |  |
+| `currentStation` | `string` | No | Current station where the train is located or last reported position |
+| `delay` | `number` | No | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `string` | No | Destination station of the train |
+| `lastUpdated` | `string` | No | Timestamp of the last position update |
+| `latitude` | `number` | No | Current latitude coordinate of the train |
+| `longitude` | `number` | No | Current longitude coordinate of the train |
+| `source` | `string` | No | Source station of the train |
+| `status` | `string` | No | Current status of the train |
+| `trainName` | `string` | No | Name of the train |
+| `trainNumber` | `string` | No | Unique identifier for the train |
 
 ### Operations
 

@@ -87,16 +87,16 @@ train = client.Train()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `currentStation` | `str` | No |  |
-| `delay` | `int` | No |  |
-| `destination` | `str` | No |  |
-| `lastUpdated` | `str` | No |  |
-| `latitude` | `float` | No |  |
-| `longitude` | `float` | No |  |
-| `source` | `str` | No |  |
-| `status` | `str` | No |  |
-| `trainName` | `str` | No |  |
-| `trainNumber` | `str` | No |  |
+| `currentStation` | `str` | No | Current station where the train is located or last reported position |
+| `delay` | `int` | No | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `str` | No | Destination station of the train |
+| `lastUpdated` | `str` | No | Timestamp of the last position update |
+| `latitude` | `float` | No | Current latitude coordinate of the train |
+| `longitude` | `float` | No | Current longitude coordinate of the train |
+| `source` | `str` | No | Source station of the train |
+| `status` | `str` | No | Current status of the train |
+| `trainName` | `str` | No | Name of the train |
+| `trainNumber` | `str` | No | Unique identifier for the train |
 
 ### Operations
 

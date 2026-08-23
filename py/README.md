@@ -256,16 +256,16 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `currentStation` |  |
-| `delay` |  |
-| `destination` |  |
-| `lastUpdated` |  |
-| `latitude` |  |
-| `longitude` |  |
-| `source` |  |
-| `status` |  |
-| `trainName` |  |
-| `trainNumber` |  |
+| `currentStation` | Current station where the train is located or last reported position |
+| `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | Destination station of the train |
+| `lastUpdated` | Timestamp of the last position update |
+| `latitude` | Current latitude coordinate of the train |
+| `longitude` | Current longitude coordinate of the train |
+| `source` | Source station of the train |
+| `status` | Current status of the train |
+| `trainName` | Name of the train |
+| `trainNumber` | Unique identifier for the train |
 
 Operations: List, Load.
 
@@ -291,16 +291,16 @@ Create an instance: `train = client.Train()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `currentStation` | `str` |  |
-| `delay` | `int` |  |
-| `destination` | `str` |  |
-| `lastUpdated` | `str` |  |
-| `latitude` | `float` |  |
-| `longitude` | `float` |  |
-| `source` | `str` |  |
-| `status` | `str` |  |
-| `trainName` | `str` |  |
-| `trainNumber` | `str` |  |
+| `currentStation` | `str` | Current station where the train is located or last reported position |
+| `delay` | `int` | Delay in minutes (positive for late, negative for early, 0 for on time) |
+| `destination` | `str` | Destination station of the train |
+| `lastUpdated` | `str` | Timestamp of the last position update |
+| `latitude` | `float` | Current latitude coordinate of the train |
+| `longitude` | `float` | Current longitude coordinate of the train |
+| `source` | `str` | Source station of the train |
+| `status` | `str` | Current status of the train |
+| `trainName` | `str` | Name of the train |
+| `trainNumber` | `str` | Unique identifier for the train |
 
 #### Example: Load
 

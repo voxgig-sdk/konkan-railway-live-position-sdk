@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "KonkanRailwayLivePosition",
+			"slug": "konkan-railway-live-position",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,42 +36,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "currentStation",
+						"short": "Current station where the train is located or last reported position",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "delay",
+						"short": "Delay in minutes (positive for late, negative for early, 0 for on time)",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "destination",
+						"short": "Destination station of the train",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "lastUpdated",
+						"short": "Timestamp of the last position update",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "latitude",
+						"short": "Current latitude coordinate of the train",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "longitude",
+						"short": "Current longitude coordinate of the train",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "Source station of the train",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Current status of the train",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "trainName",
+						"short": "Name of the train",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "trainNumber",
+						"short": "Unique identifier for the train",
 						"type": "`$STRING`",
 					},
 				},
