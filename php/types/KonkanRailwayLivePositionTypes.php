@@ -18,6 +18,7 @@ class Train
     public ?string $currentStation = null;
     public ?int $delay = null;
     public ?string $destination = null;
+    public ?string $id = null;
     public ?string $lastUpdated = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
@@ -39,6 +40,7 @@ class TrainListMatch
     public ?string $currentStation = null;
     public ?int $delay = null;
     public ?string $destination = null;
+    public ?string $id = null;
     public ?string $lastUpdated = null;
     public ?float $latitude = null;
     public ?float $longitude = null;

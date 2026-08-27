@@ -42,6 +42,7 @@ class KonkanRailwayLivePositionConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -69,6 +70,10 @@ class KonkanRailwayLivePositionConfig
             [
               'name' => 'destination',
               'short' => 'Destination station of the train',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [

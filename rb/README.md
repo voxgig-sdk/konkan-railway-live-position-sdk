@@ -37,7 +37,7 @@ begin
   # list returns an Array of Train records — iterate directly.
   trains = client.Train.list
   trains.each do |item|
-    puts "#{item["currentStation"]}"
+    puts "#{item["id"]} #{item["currentStation"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -256,6 +256,7 @@ returns a result `Hash` with these keys:
 | `currentStation` | Current station where the train is located or last reported position |
 | `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | Destination station of the train |
+| `id` |  |
 | `lastUpdated` | Timestamp of the last position update |
 | `latitude` | Current latitude coordinate of the train |
 | `longitude` | Current longitude coordinate of the train |
@@ -291,6 +292,7 @@ Create an instance: `train = client.Train`
 | `currentStation` | `String` | Current station where the train is located or last reported position |
 | `delay` | `Integer` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `String` | Destination station of the train |
+| `id` | `String` |  |
 | `lastUpdated` | `String` | Timestamp of the last position update |
 | `latitude` | `Float` | Current latitude coordinate of the train |
 | `longitude` | `Float` | Current longitude coordinate of the train |

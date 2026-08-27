@@ -19,6 +19,9 @@
 # @!attribute [rw] destination
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
@@ -43,6 +46,7 @@ Train = Struct.new(
   :currentStation,
   :delay,
   :destination,
+  :id,
   :lastUpdated,
   :latitude,
   :longitude,
@@ -73,6 +77,9 @@ TrainLoadMatch = Struct.new(
 # @!attribute [rw] destination
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] lastUpdated
 #   @return [String, nil]
 #
@@ -97,6 +104,7 @@ TrainListMatch = Struct.new(
   :currentStation,
   :delay,
   :destination,
+  :id,
   :lastUpdated,
   :latitude,
   :longitude,

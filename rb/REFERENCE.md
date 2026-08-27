@@ -96,6 +96,7 @@ train = client.Train
 | `currentStation` | `String` | No | Current station where the train is located or last reported position |
 | `delay` | `Integer` | No | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `String` | No | Destination station of the train |
+| `id` | `String` | No |  |
 | `lastUpdated` | `String` | No | Timestamp of the last position update |
 | `latitude` | `Float` | No | Current latitude coordinate of the train |
 | `longitude` | `Float` | No | Current longitude coordinate of the train |

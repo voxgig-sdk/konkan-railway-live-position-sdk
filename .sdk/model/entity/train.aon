@@ -24,6 +24,11 @@ main: kit: entity: train: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "lastUpdated"
       req: false
       short: "Timestamp of the last position update"
@@ -66,6 +71,11 @@ main: kit: entity: train: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "train"
   op: {

@@ -101,6 +101,7 @@ fmt.Println(train.GetName()) // "train"
 | `currentStation` | `string` | No | Current station where the train is located or last reported position |
 | `delay` | `int` | No | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `string` | No | Destination station of the train |
+| `id` | `string` | No |  |
 | `lastUpdated` | `string` | No | Timestamp of the last position update |
 | `latitude` | `float64` | No | Current latitude coordinate of the train |
 | `longitude` | `float64` | No | Current longitude coordinate of the train |

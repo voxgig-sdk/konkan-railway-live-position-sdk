@@ -66,6 +66,12 @@ describe('TrainEntity', async () => {
     const train_ref01_list = (await train_ref01_ent.list(train_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const train_ref01_match_dt0: any = {}
+    train_ref01_match_dt0.id = train_ref01_data.id
+    const train_ref01_data_dt0 = (await train_ref01_ent.load(train_ref01_match_dt0)).data()
+    assert(train_ref01_data_dt0.id === train_ref01_data.id)
+
 
   })
 })

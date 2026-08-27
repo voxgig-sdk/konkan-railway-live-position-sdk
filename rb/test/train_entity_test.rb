@@ -83,9 +83,13 @@ class TrainEntityTest < Minitest::Test
     assert train_ref01_list_result.is_a?(Array)
 
     # LOAD
-    train_ref01_match_dt0 = {}
+    train_ref01_match_dt0 = {
+      "id" => train_ref01_data["id"],
+    }
     train_ref01_data_dt0_loaded = train_ref01_ent.load(train_ref01_match_dt0, nil)
-    assert !train_ref01_data_dt0_loaded.nil?
+    train_ref01_data_dt0_load_result = Helpers.to_map(train_ref01_data_dt0_loaded.respond_to?(:data_get) ? train_ref01_data_dt0_loaded.data_get : train_ref01_data_dt0_loaded)
+    assert !train_ref01_data_dt0_load_result.nil?
+    assert_equal train_ref01_data_dt0_load_result["id"], train_ref01_data["id"]
 
   end
 end

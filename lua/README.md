@@ -43,7 +43,7 @@ local trains, err = client:Train():list()
 if err then error(err) end
 
 for _, item in ipairs(trains) do
-  print(item["currentStation"])
+  print(item["id"], item["currentStation"])
 end
 ```
 
@@ -244,6 +244,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `currentStation` | Current station where the train is located or last reported position |
 | `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | Destination station of the train |
+| `id` |  |
 | `lastUpdated` | Timestamp of the last position update |
 | `latitude` | Current latitude coordinate of the train |
 | `longitude` | Current longitude coordinate of the train |
@@ -279,6 +280,7 @@ Create an instance: `local train = client:Train(nil)`
 | `currentStation` | `string` | Current station where the train is located or last reported position |
 | `delay` | `number` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `string` | Destination station of the train |
+| `id` | `string` |  |
 | `lastUpdated` | `string` | Timestamp of the last position update |
 | `latitude` | `number` | Current latitude coordinate of the train |
 | `longitude` | `number` | Current longitude coordinate of the train |

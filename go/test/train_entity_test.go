@@ -121,13 +121,19 @@ func TestTrainEntity(t *testing.T) {
 		}
 
 		// LOAD
-		trainRef01MatchDt0 := map[string]any{}
+		trainRef01MatchDt0 := map[string]any{
+			"id": trainRef01Data["id"],
+		}
 		trainRef01DataDt0Loaded, err := trainRef01Ent.Load(trainRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if trainRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		trainRef01DataDt0LoadResult := core.ToMapAny(entityData(trainRef01DataDt0Loaded))
+		if trainRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if trainRef01DataDt0LoadResult["id"] != trainRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

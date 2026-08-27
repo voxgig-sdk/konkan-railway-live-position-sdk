@@ -259,6 +259,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | `currentStation` | Current station where the train is located or last reported position |
 | `delay` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | Destination station of the train |
+| `id` |  |
 | `lastUpdated` | Timestamp of the last position update |
 | `latitude` | Current latitude coordinate of the train |
 | `longitude` | Current longitude coordinate of the train |
@@ -294,6 +295,7 @@ Create an instance: `train = client.Train()`
 | `currentStation` | `str` | Current station where the train is located or last reported position |
 | `delay` | `int` | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `str` | Destination station of the train |
+| `id` | `str` |  |
 | `lastUpdated` | `str` | Timestamp of the last position update |
 | `latitude` | `float` | Current latitude coordinate of the train |
 | `longitude` | `float` | Current longitude coordinate of the train |

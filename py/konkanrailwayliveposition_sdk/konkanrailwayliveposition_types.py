@@ -20,6 +20,7 @@ class Train(TypedDict, total=False):
     currentStation: str
     delay: int
     destination: str
+    id: str
     lastUpdated: str
     latitude: float
     longitude: float
@@ -37,6 +38,7 @@ class TrainListMatch(TypedDict, total=False):
     currentStation: str
     delay: int
     destination: str
+    id: str
     lastUpdated: str
     latitude: float
     longitude: float

@@ -93,9 +93,13 @@ class TrainEntityTest extends TestCase
         $this->assertIsArray($train_ref01_list_result);
 
         // LOAD
-        $train_ref01_match_dt0 = [];
+        $train_ref01_match_dt0 = [
+            "id" => $train_ref01_data["id"],
+        ];
         $train_ref01_data_dt0_loaded = $train_ref01_ent->load($train_ref01_match_dt0, null);
-        $this->assertNotNull($train_ref01_data_dt0_loaded);
+        $train_ref01_data_dt0_load_result = Helpers::to_map(is_object($train_ref01_data_dt0_loaded) && method_exists($train_ref01_data_dt0_loaded, 'data_get') ? $train_ref01_data_dt0_loaded->data_get() : $train_ref01_data_dt0_loaded);
+        $this->assertNotNull($train_ref01_data_dt0_load_result);
+        $this->assertEquals($train_ref01_data_dt0_load_result["id"], $train_ref01_data["id"]);
 
     }
 }

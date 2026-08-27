@@ -119,6 +119,7 @@ const train = client.Train()
 | `currentStation` | `string` | No | Current station where the train is located or last reported position |
 | `delay` | `number` | No | Delay in minutes (positive for late, negative for early, 0 for on time) |
 | `destination` | `string` | No | Destination station of the train |
+| `id` | `string` | No |  |
 | `lastUpdated` | `string` | No | Timestamp of the last position update |
 | `latitude` | `number` | No | Current latitude coordinate of the train |
 | `longitude` | `number` | No | Current longitude coordinate of the train |

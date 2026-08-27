@@ -2,59 +2,59 @@
   "existing": {
     "train": {
       "TRAIN00": {
-        "currentStation": "s64",
-        "delay": "s65",
-        "destination": "s66",
-        "lastUpdated": "s67",
-        "latitude": 104,
-        "longitude": 105,
-        "source": "s6a",
-        "status": "s6b",
-        "trainName": "s6c",
-        "trainNumber": "s6d",
-        "id": "TRAIN00"
+        "currentStation": "s6e",
+        "delay": "s6f",
+        "destination": "s70",
+        "id": "TRAIN00",
+        "lastUpdated": "s72",
+        "latitude": 115,
+        "longitude": 116,
+        "source": "s75",
+        "status": "s76",
+        "trainName": "s77",
+        "trainNumber": "s78"
       },
       "TRAIN01": {
-        "currentStation": "sc8",
-        "delay": "sc9",
-        "destination": "sca",
-        "lastUpdated": "scb",
-        "latitude": 204,
-        "longitude": 205,
-        "source": "sce",
-        "status": "scf",
-        "trainName": "sd0",
-        "trainNumber": "sd1",
-        "id": "TRAIN01"
+        "currentStation": "sdc",
+        "delay": "sdd",
+        "destination": "sde",
+        "id": "TRAIN01",
+        "lastUpdated": "se0",
+        "latitude": 225,
+        "longitude": 226,
+        "source": "se3",
+        "status": "se4",
+        "trainName": "se5",
+        "trainNumber": "se6"
       },
       "TRAIN02": {
-        "currentStation": "s12c",
-        "delay": "s12d",
-        "destination": "s12e",
-        "lastUpdated": "s12f",
-        "latitude": 304,
-        "longitude": 305,
-        "source": "s132",
-        "status": "s133",
-        "trainName": "s134",
-        "trainNumber": "s135",
-        "id": "TRAIN02"
+        "currentStation": "s14a",
+        "delay": "s14b",
+        "destination": "s14c",
+        "id": "TRAIN02",
+        "lastUpdated": "s14e",
+        "latitude": 335,
+        "longitude": 336,
+        "source": "s151",
+        "status": "s152",
+        "trainName": "s153",
+        "trainNumber": "s154"
       }
     }
   },
   "new": {
     "train": {
       "train_ref01": {
-        "currentStation": "s190",
-        "delay": "s191",
-        "destination": "s192",
-        "lastUpdated": "s193",
-        "latitude": 404,
-        "longitude": 405,
-        "source": "s196",
-        "status": "s197",
-        "trainName": "s198",
-        "trainNumber": "s199"
+        "currentStation": "s1b8",
+        "delay": "s1b9",
+        "destination": "s1ba",
+        "lastUpdated": "s1bc",
+        "latitude": 445,
+        "longitude": 446,
+        "source": "s1bf",
+        "status": "s1c0",
+        "trainName": "s1c1",
+        "trainNumber": "s1c2"
       }
     }
   }

@@ -10,6 +10,7 @@
 ---@field currentStation? string
 ---@field delay? number
 ---@field destination? string
+---@field id? string
 ---@field lastUpdated? string
 ---@field latitude? number
 ---@field longitude? number
@@ -25,6 +26,7 @@
 ---@field currentStation? string
 ---@field delay? number
 ---@field destination? string
+---@field id? string
 ---@field lastUpdated? string
 ---@field latitude? number
 ---@field longitude? number

@@ -9,6 +9,7 @@ export interface Train {
   currentStation?: string
   delay?: number
   destination?: string
+  id?: string
   lastUpdated?: string
   latitude?: number
   longitude?: number
@@ -26,6 +27,7 @@ export interface TrainListMatch {
   currentStation?: string
   delay?: number
   destination?: string
+  id?: string
   lastUpdated?: string
   latitude?: number
   longitude?: number

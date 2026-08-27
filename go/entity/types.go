@@ -17,6 +17,7 @@ type Train struct {
 	CurrentStation *string `json:"currentStation,omitempty"`
 	Delay *int `json:"delay,omitempty"`
 	Destination *string `json:"destination,omitempty"`
+	Id *string `json:"id,omitempty"`
 	LastUpdated *string `json:"lastUpdated,omitempty"`
 	Latitude *float64 `json:"latitude,omitempty"`
 	Longitude *float64 `json:"longitude,omitempty"`
@@ -36,6 +37,7 @@ type TrainListMatch struct {
 	CurrentStation *string `json:"currentStation,omitempty"`
 	Delay *int `json:"delay,omitempty"`
 	Destination *string `json:"destination,omitempty"`
+	Id *string `json:"id,omitempty"`
 	LastUpdated *string `json:"lastUpdated,omitempty"`
 	Latitude *float64 `json:"latitude,omitempty"`
 	Longitude *float64 `json:"longitude,omitempty"`
