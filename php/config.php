@@ -77,16 +77,19 @@ class KonkanRailwayLivePositionConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'lastUpdated',
               'short' => 'Timestamp of the last position update',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'double',
               'name' => 'latitude',
               'short' => 'Current latitude coordinate of the train',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'double',
               'name' => 'longitude',
               'short' => 'Current longitude coordinate of the train',
               'type' => '`$NUMBER`',
@@ -112,6 +115,10 @@ class KonkanRailwayLivePositionConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'train',
           'op' => [
             'list' => [
@@ -123,14 +130,22 @@ class KonkanRailwayLivePositionConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/trains',
-                  'parts' => [
-                    'api',
-                    'trains',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'trains',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'trains',
                   ],
                 ],
               ],
@@ -155,14 +170,20 @@ class KonkanRailwayLivePositionConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/trains/{trainNumber}',
-                  'parts' => [
-                    'api',
-                    'trains',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'trainNumber' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'trains',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -173,6 +194,11 @@ class KonkanRailwayLivePositionConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'trains',
+                    '{id}',
                   ],
                 ],
               ],

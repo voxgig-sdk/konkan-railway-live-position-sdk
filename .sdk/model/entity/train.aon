@@ -29,18 +29,21 @@ main: kit: entity: train: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "lastUpdated"
       req: false
       short: "Timestamp of the last position update"
       type: "`$STRING`"
     }
     {
+      format: "double"
       name: "latitude"
       req: false
       short: "Current latitude coordinate of the train"
       type: "`$NUMBER`"
     }
     {
+      format: "double"
       name: "longitude"
       req: false
       short: "Current longitude coordinate of the train"
@@ -85,9 +88,13 @@ main: kit: entity: train: {
         {
           method: "GET"
           orig: "/api/trains"
-          parts: [
-            "api"
-            "trains"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "trains"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -114,16 +121,22 @@ main: kit: entity: train: {
           }
           method: "GET"
           orig: "/api/trains/{trainNumber}"
-          parts: [
-            "api"
-            "trains"
-            "{id}"
-          ]
           rename: {
             param: {
               trainNumber: "id"
             }
           }
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "trains"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

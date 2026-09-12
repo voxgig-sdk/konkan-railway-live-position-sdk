@@ -51,16 +51,19 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "lastUpdated",
             ["short"] = "Timestamp of the last position update",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "double",
             ["name"] = "latitude",
             ["short"] = "Current latitude coordinate of the train",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "double",
             ["name"] = "longitude",
             ["short"] = "Current longitude coordinate of the train",
             ["type"] = "`$NUMBER`",
@@ -86,6 +89,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "train",
         ["op"] = {
           ["list"] = {
@@ -97,14 +104,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/trains",
-                ["parts"] = {
-                  "api",
-                  "trains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "trains",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "trains",
                 },
               },
             },
@@ -129,14 +144,20 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/trains/{trainNumber}",
-                ["parts"] = {
-                  "api",
-                  "trains",
-                  "{id}",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["trainNumber"] = "id",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "trains",
+                  },
+                  {
+                    ["var"] = "id",
                   },
                 },
                 ["select"] = {
@@ -147,6 +168,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "trains",
+                  "{id}",
                 },
               },
             },
