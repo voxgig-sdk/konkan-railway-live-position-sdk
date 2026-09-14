@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/konkan-railway-live-position",
+  "name": "@voxgig-sdk/konkan-railway-live-position-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Konkan Railway Live Position public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position'
+import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position-sdk'
 
 const client = new KonkanRailwayLivePositionSDK()
 ```
@@ -445,7 +445,7 @@ konkan-railway-live-position/
 Import the SDK from the package root:
 
 ```ts
-import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position'
+import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position-sdk'
 ```
 
 ### Entity state

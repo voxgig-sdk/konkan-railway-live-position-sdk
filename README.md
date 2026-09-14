@@ -105,7 +105,7 @@ local results, err = client:Train():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
+| TypeScript | `@voxgig-sdk/konkan-railway-live-position-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
 | Python | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
 | PHP | `voxgig-sdk/konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/konkan-railway-live-position-sdk/go` | `go get github.com/voxgig-sdk/konkan-railway-live-position-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Train():list()
 ### TypeScript
 
 ```ts
-import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position'
+import { KonkanRailwayLivePositionSDK } from '@voxgig-sdk/konkan-railway-live-position-sdk'
 
 const client = new KonkanRailwayLivePositionSDK()
 
