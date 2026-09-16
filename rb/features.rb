@@ -1,7 +1,10 @@
 # KonkanRailwayLivePosition SDK feature factory
 
 require_relative 'feature/base_feature'
+require_relative 'feature/ratelimit_feature'
+require_relative 'feature/retry_feature'
 require_relative 'feature/test_feature'
+require_relative 'feature/timeout_feature'
 
 
 module KonkanRailwayLivePositionFeatures
@@ -9,8 +12,14 @@ module KonkanRailwayLivePositionFeatures
     case name
     when "base"
       KonkanRailwayLivePositionBaseFeature.new
+    when "ratelimit"
+      KonkanRailwayLivePositionRatelimitFeature.new
+    when "retry"
+      KonkanRailwayLivePositionRetryFeature.new
     when "test"
       KonkanRailwayLivePositionTestFeature.new
+    when "timeout"
+      KonkanRailwayLivePositionTimeoutFeature.new
     else
       KonkanRailwayLivePositionBaseFeature.new
     end

@@ -1,12 +1,18 @@
 # KonkanRailwayLivePosition SDK feature factory
 
 from konkanrailwayliveposition_sdk.feature.base_feature import KonkanRailwayLivePositionBaseFeature
+from konkanrailwayliveposition_sdk.feature.ratelimit_feature import KonkanRailwayLivePositionRatelimitFeature
+from konkanrailwayliveposition_sdk.feature.retry_feature import KonkanRailwayLivePositionRetryFeature
 from konkanrailwayliveposition_sdk.feature.test_feature import KonkanRailwayLivePositionTestFeature
+from konkanrailwayliveposition_sdk.feature.timeout_feature import KonkanRailwayLivePositionTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: KonkanRailwayLivePositionBaseFeature(),
+    "ratelimit": lambda: KonkanRailwayLivePositionRatelimitFeature(),
+    "retry": lambda: KonkanRailwayLivePositionRetryFeature(),
     "test": lambda: KonkanRailwayLivePositionTestFeature(),
+    "timeout": lambda: KonkanRailwayLivePositionTimeoutFeature(),
 }
 
 

@@ -3,7 +3,7 @@
     "train": {
       "TRAIN00": {
         "currentStation": "s6e",
-        "delay": "s6f",
+        "delay": 111,
         "destination": "s70",
         "id": "TRAIN00",
         "lastUpdated": "s72",
@@ -16,7 +16,7 @@
       },
       "TRAIN01": {
         "currentStation": "sdc",
-        "delay": "sdd",
+        "delay": 221,
         "destination": "sde",
         "id": "TRAIN01",
         "lastUpdated": "se0",
@@ -29,7 +29,7 @@
       },
       "TRAIN02": {
         "currentStation": "s14a",
-        "delay": "s14b",
+        "delay": 331,
         "destination": "s14c",
         "id": "TRAIN02",
         "lastUpdated": "s14e",
@@ -46,7 +46,7 @@
     "train": {
       "train_ref01": {
         "currentStation": "s1b8",
-        "delay": "s1b9",
+        "delay": 441,
         "destination": "s1ba",
         "lastUpdated": "s1bc",
         "latitude": 445,
@@ -55,6 +55,269 @@
         "status": "s1c0",
         "trainName": "s1c1",
         "trainNumber": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/trains": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAllTrains",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "currentStation": {
+                        "description": "Current station where the train is located or last reported position",
+                        "example": "Ratnagiri",
+                        "type": "string"
+                      },
+                      "delay": {
+                        "description": "Delay in minutes (positive for late, negative for early, 0 for on time)",
+                        "example": 15,
+                        "type": "integer"
+                      },
+                      "destination": {
+                        "description": "Destination station of the train",
+                        "example": "Madgaon",
+                        "type": "string"
+                      },
+                      "lastUpdated": {
+                        "description": "Timestamp of the last position update",
+                        "example": "2023-10-15T14:30:00Z",
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "latitude": {
+                        "description": "Current latitude coordinate of the train",
+                        "example": 17.0076,
+                        "format": "double",
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "description": "Current longitude coordinate of the train",
+                        "example": 73.3197,
+                        "format": "double",
+                        "type": "number"
+                      },
+                      "source": {
+                        "description": "Source station of the train",
+                        "example": "Mumbai CST",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Current status of the train",
+                        "enum": [
+                          "Running",
+                          "Delayed",
+                          "On Time",
+                          "Arrived",
+                          "Departed"
+                        ],
+                        "example": "Running",
+                        "type": "string"
+                      },
+                      "trainName": {
+                        "description": "Name of the train",
+                        "example": "Mandovi Express",
+                        "type": "string"
+                      },
+                      "trainNumber": {
+                        "description": "Unique identifier for the train",
+                        "example": "10103",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response with list of trains"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Train not found",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error description",
+                      "example": "The requested train number does not exist in the Konkan Railway network",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 404,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/trains/{trainNumber}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getTrainByNumber",
+        "parameters": [
+          {
+            "description": "The unique train number to retrieve position information",
+            "example": "10103",
+            "in": "path",
+            "name": "trainNumber",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "currentStation": {
+                      "description": "Current station where the train is located or last reported position",
+                      "example": "Ratnagiri",
+                      "type": "string"
+                    },
+                    "delay": {
+                      "description": "Delay in minutes (positive for late, negative for early, 0 for on time)",
+                      "example": 15,
+                      "type": "integer"
+                    },
+                    "destination": {
+                      "description": "Destination station of the train",
+                      "example": "Madgaon",
+                      "type": "string"
+                    },
+                    "lastUpdated": {
+                      "description": "Timestamp of the last position update",
+                      "example": "2023-10-15T14:30:00Z",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "description": "Current latitude coordinate of the train",
+                      "example": 17.0076,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "description": "Current longitude coordinate of the train",
+                      "example": 73.3197,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "source": {
+                      "description": "Source station of the train",
+                      "example": "Mumbai CST",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Current status of the train",
+                      "enum": [
+                        "Running",
+                        "Delayed",
+                        "On Time",
+                        "Arrived",
+                        "Departed"
+                      ],
+                      "example": "Running",
+                      "type": "string"
+                    },
+                    "trainName": {
+                      "description": "Name of the train",
+                      "example": "Mandovi Express",
+                      "type": "string"
+                    },
+                    "trainNumber": {
+                      "description": "Unique identifier for the train",
+                      "example": "10103",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with train details"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Train not found",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error description",
+                      "example": "The requested train number does not exist in the Konkan Railway network",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 404,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Train not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "example": "Train not found",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed error description",
+                      "example": "The requested train number does not exist in the Konkan Railway network",
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "description": "HTTP status code",
+                      "example": 404,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

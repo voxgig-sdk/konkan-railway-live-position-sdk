@@ -4,7 +4,10 @@ declare(strict_types=1);
 // KonkanRailwayLivePosition SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class KonkanRailwayLivePositionFeatures
@@ -14,8 +17,14 @@ class KonkanRailwayLivePositionFeatures
         switch ($name) {
             case "base":
                 return new KonkanRailwayLivePositionBaseFeature();
+            case "ratelimit":
+                return new KonkanRailwayLivePositionRatelimitFeature();
+            case "retry":
+                return new KonkanRailwayLivePositionRetryFeature();
             case "test":
                 return new KonkanRailwayLivePositionTestFeature();
+            case "timeout":
+                return new KonkanRailwayLivePositionTimeoutFeature();
             default:
                 return new KonkanRailwayLivePositionBaseFeature();
         }
@@ -31,7 +40,10 @@ class KonkanRailwayLivePositionFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
