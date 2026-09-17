@@ -105,12 +105,12 @@ local results, err = client:Train():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/konkan-railway-live-position-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
-| Python | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
-| PHP | `voxgig-sdk/konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
+| TypeScript | `@voxgig-sdk/konkan-railway-live-position-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/tags) |
+| Python | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/tags) |
+| PHP | `voxgig-sdk/konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/konkan-railway-live-position-sdk/go` | `go get github.com/voxgig-sdk/konkan-railway-live-position-sdk/go@latest` |
-| Ruby | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
-| Lua | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/releases) |
+| Ruby | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/tags) |
+| Lua | `voxgig-sdk-konkan-railway-live-position` | publish pending — [install from git tag](https://github.com/voxgig-sdk/konkan-railway-live-position-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/konkan-railway-live-position-sdk/go-cli` | `go install github.com/voxgig-sdk/konkan-railway-live-position-sdk/go-cli/cmd/konkan-railway-live-position@latest` |
 | Go MCP server | `github.com/voxgig-sdk/konkan-railway-live-position-sdk/go-mcp` | `go get github.com/voxgig-sdk/konkan-railway-live-position-sdk/go-mcp@latest` |
 
